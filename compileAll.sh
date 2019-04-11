@@ -10,8 +10,8 @@ for D in *; do
     if [ -d "${D}" ]; then
 	cd ${D} ;
 	echo "bench/app/"${D}"\\" >>$makefile
-    cp ../../../Makefile.tpl Makefile;
-    cd ..;
+	cp ../../../Makefile.tpl Makefile;
+	cd ..;
     fi
 done;
 cd ../kernel;
@@ -19,8 +19,8 @@ for D in *; do
     if [ -d "${D}" ]; then
 	cd ${D};
 	echo "bench/kernel/"${D}"\\" >>$makefile
-    cp ../../../Makefile.tpl Makefile;
-    cd ..;
+	cp ../../../Makefile.tpl Makefile;
+	cd ..;
     fi
 done;
 cd ../sequential;
@@ -28,8 +28,8 @@ for D in *; do
     if [ -d "${D}" ]; then
 	cd ${D};
 	echo "bench/sequential/"${D}"\\" >>$makefile
-    cp ../../../Makefile.tpl Makefile;
-    cd ..;
+	cp ../../../Makefile.tpl Makefile;
+	cd ..;
     fi
 done;
 cd ../test;
@@ -37,8 +37,8 @@ for D in *; do
     if [ -d "${D}" ]; then
 	cd ${D};
 	echo "bench/test/"${D}"\\" >>$makefile
-    cp ../../../Makefile.tpl Makefile;
-    cd ..;
+	cp ../../../Makefile.tpl Makefile;
+	cd ..;
     fi
 done;
 cd ../..;
