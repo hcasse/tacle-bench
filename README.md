@@ -38,9 +38,11 @@ All benchmarks are self-contained and can be compiled just with
     cc/gcc/clang *.c
 
 In addition to the original benchmarks, we provide Makefile templates as well as a configure.sh script which generates Makefiles directly in the benches directories.
+
    Run ./configure.sh
    Then configure the Makefile.std with the flags you want
    Finally, run Make in the top directory
+
 (Works for all benches except the parallel ones)
 
 Current Status
