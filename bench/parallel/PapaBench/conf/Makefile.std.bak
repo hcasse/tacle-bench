@@ -1,5 +1,5 @@
 # 
-#   $Id$
+#   $Id: Makefile.std,v 1.3 2011-01-21 11:52:33 moellmer Exp $
 #   Copyright (C) 2003 Pascal Brisset, Antoine Drouin
 #
 # This file is part of paparazzi.
@@ -27,16 +27,22 @@
 #
 
 # Configuration
+BASE = .
+TARGET = main
+
+
 PAPARAZZI_DIR = \"$(BASE)/\"
 ATMELBIN = /usr/bin
-ATMEL_INCLUDES = -I $(BASE)/arch/include/avr/arch -I $(BASE)/arch/include/avr
+ATMEL_INCLUDES = -I $(BASE)/avr/include/
 UISPBIN=/usr/bin
 PROG_PORT = /dev/parport0
 USB_PROG_PORT = /dev/ttyUSB1
 
 
+
+
 # Architecture dependent
-include $(BASE)/conf/Makefile.local
+include $(BASE)/conf/Makefile.local.in
 -include $(BASE)/conf/$(CONF).conf
 
 SERIAL_FLAGS =	\
@@ -66,19 +72,16 @@ UISP_FLAGS	= $(ISP_FLAGS)
 
 
 CFLAGS = \
-	-W -Wall \
+	-Wall \
 	$(ATMEL_INCLUDES) \
 	$(INCLUDES) \
-	-Wall \
-	-Wstrict-prototypes	\
 	$(LOCAL_CFLAGS)	\
-	-O2	\
-	-nostdinc \
+#	-O2	\
 	$(ARCH_CFLAGS) \
 	$(USER_CFLAGS)
-ifdef PAPABENCH_SINGLE
+#ifdef PAPABENCH_SINGLE
 CFLAGS += -DPAPABENCH_SINGLE
-endif
+#endif
 	
 
 LDFLAGS = \
@@ -95,13 +98,16 @@ all:									\
 
 compile: $(TARGET).elf							\
 
-#load upload: check_fuses					 	\
-#	$(TARGET).install
+load_upload: check_fuses					 	\
+	$(TARGET).install
 
 $(TARGET).objs	=							\
 	$($(TARGET).srcs:.c=.o)
 
-$(TARGET).elf: $($(TARGET).objs)
+#$(TARGET).elf: $($(TARGET).objs)
+$(TARGET).elf: $(TARGET).c *.c
+	$(CC) $(CFLAGS) $($(TARGET).srcs) -o $@
+
 
 #
 # Fuses
@@ -174,7 +180,7 @@ avr_clean:
 #
 
 .depend:
-	$(CC) -M $(CFLAGS) $($(TARGET).srcs) > .depend
+	$(CC) $(CFLAGS) $($(TARGET).srcs) > .depend
 
 ifneq ($(MAKECMDGOALS),clean) 
 ifneq ($(MAKECMDGOALS),erase) 
