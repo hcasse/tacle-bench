@@ -1,0 +1,22 @@
+digraph main {
+	graph [label=<main function>];
+	node [];
+	edge [];
+	0 [label=<entry>, shape=Mrecord];
+	1 [label=<<TABLE BORDER="0"><TR><TD><B>BB 1</B> (00010450)</TD></TR><HR/><TR><TD ALIGN="LEFT"><FONT COLOR="blue">main:</FONT><BR ALIGN="left"/>00010450  push \{r7, lr\}<BR ALIGN="left"/>00010452  add r7, sp, #0<BR ALIGN="left"/>00010454  bl 0x1031a<BR ALIGN="left"/></TD></TR></TABLE>>, shape=Mrecord, margin=0];
+	2 [label=<<TABLE BORDER="0"><TR><TD><B>BB 2</B> (00010458)</TD></TR><HR/><TR><TD ALIGN="LEFT">00010458  bl 0x1043a<BR ALIGN="left"/></TD></TR></TABLE>>, shape=Mrecord, margin=0];
+	3 [label=<<TABLE BORDER="0"><TR><TD><B>BB 3</B> (0001045c)</TD></TR><HR/><TR><TD ALIGN="LEFT">0001045c  bl 0x10330<BR ALIGN="left"/></TD></TR></TABLE>>, shape=Mrecord, margin=0];
+	4 [label=<<TABLE BORDER="0"><TR><TD><B>BB 4</B> (00010460)</TD></TR><HR/><TR><TD ALIGN="LEFT">00010460  movs r3, r0<BR ALIGN="left"/>00010462  movs r0, r3<BR ALIGN="left"/>00010464  pop \{r7, pc\}<BR ALIGN="left"/></TD></TR></TABLE>>, shape=Mrecord, margin=0];
+	5 [label=<<B>BB 5</B> (bsort_init)>, URL="1.dot", shape=box];
+	6 [label=<<B>BB 6</B> (bsort_main)>, URL="2.dot", shape=box];
+	7 [label=<<B>BB 7</B> (bsort_return)>, URL="3.dot", shape=box];
+	8 [label=<exit>, URL="3.dot", shape=Mrecord];
+	0 -> 1 [URL="3.dot", style="dashed"];
+	1 -> 5 [URL="3.dot", style="dashed"];
+	2 -> 6 [URL="3.dot", style="dashed"];
+	3 -> 7 [URL="3.dot", style="dashed"];
+	4 -> 8 [URL="3.dot", style="dashed"];
+	5 -> 2 [URL="3.dot", style="dashed"];
+	6 -> 3 [URL="3.dot", style="dashed"];
+	7 -> 4 [URL="3.dot", style="dashed"];
+}

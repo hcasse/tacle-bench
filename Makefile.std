@@ -1,0 +1,16 @@
+CC=arm-linux-gnueabihf-gcc
+CFLAGS= -mfloat-abi=hard -march=armv7 -g3 -O2
+LDFLAGS= -static
+
+all: $(notdir $(CURDIR)).elf
+
+%.elf: %.c *.c
+	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+
+
+#$(notdir $(CURDIR)): *.c
+#	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+
+
+clean:
+	rm -f *.o $(notdir $(CURDIR)).elf

@@ -1,0 +1,17 @@
+digraph main {
+	graph [label=<bsort_Initialize function>];
+	node [];
+	edge [];
+	0 [label=<entry>, shape=Mrecord];
+	1 [label=<<TABLE BORDER="0"><TR><TD><B>BB 1</B> (000102e4)</TD></TR><HR/><TR><TD ALIGN="LEFT"><FONT COLOR="blue">bsort_Initialize:</FONT><BR ALIGN="left"/>000102e4  push \{r7\}<BR ALIGN="left"/>000102e6  sub sp, #20<BR ALIGN="left"/>000102e8  add r7, sp, #0<BR ALIGN="left"/>000102ea  str r0, [r7, #0x4]<BR ALIGN="left"/>000102ec  movs r3, #0<BR ALIGN="left"/>000102ee  str r3, [r7, #0xc]<BR ALIGN="left"/>000102f0  bs.n 00010306<BR ALIGN="left"/></TD></TR></TABLE>>, shape=Mrecord, margin=0];
+	2 [label=<<TABLE BORDER="0"><TR><TD><B>BB 2</B> (00010306)</TD></TR><HR/><TR><TD ALIGN="LEFT">00010306  ldr r3, [r7, #0xc]<BR ALIGN="left"/>00010308  cmp r3, #99<BR ALIGN="left"/>0001030a  ble.n 000102f2<BR ALIGN="left"/></TD></TR></TABLE>>, shape=Mrecord, margin=0];
+	3 [label=<<TABLE BORDER="0"><TR><TD><B>BB 3</B> (000102f2)</TD></TR><HR/><TR><TD ALIGN="LEFT">000102f2  ldr r3, [r7, #0xc]<BR ALIGN="left"/>000102f4  lsls r3, r3, #2<BR ALIGN="left"/>000102f6  ldr r2, [r7, #0x4]<BR ALIGN="left"/>000102f8  add r3, r2<BR ALIGN="left"/>000102fa  ldr r2, [r7, #0xc]<BR ALIGN="left"/>000102fc  mvns r2, r2<BR ALIGN="left"/>000102fe  str r2, [r3, #0x0]<BR ALIGN="left"/>00010300  ldr r3, [r7, #0xc]<BR ALIGN="left"/>00010302  adds r3, #1<BR ALIGN="left"/>00010304  str r3, [r7, #0xc]<BR ALIGN="left"/></TD></TR></TABLE>>, shape=Mrecord, margin=0];
+	4 [label=<<TABLE BORDER="0"><TR><TD><B>BB 4</B> (0001030c)</TD></TR><HR/><TR><TD ALIGN="LEFT">0001030c  movs r3, #0<BR ALIGN="left"/>0001030e  movs r0, r3<BR ALIGN="left"/>00010310  adds r7, #20<BR ALIGN="left"/>00010312  movs sp, r7<BR ALIGN="left"/>00010314  ldr r7, [sp], #0x4<BR ALIGN="left"/>00010318  bx lr<BR ALIGN="left"/></TD></TR></TABLE>>, shape=Mrecord, margin=0];
+	5 [label=<exit>, shape=Mrecord];
+	0 -> 1 [style="dashed"];
+	1 -> 2 [label=<taken>];
+	2 -> 3 [label=<taken>];
+	2 -> 4 [];
+	3 -> 2 [];
+	4 -> 5 [style="dashed"];
+}

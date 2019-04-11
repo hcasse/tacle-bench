@@ -1,0 +1,9 @@
+CC=arm-linux-gnueabihf-gcc
+CFLAGS= -mfloat-abi=hard -march=armv7 -g3 -O2
+
+all: $(notdir $(CURDIR))
+
+$(notdir $(CURDIR)): $(notdir $(CURDIR)).c
+	$(CC) $(CFAGS) -o $@ $^
+
+
