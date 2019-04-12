@@ -15,17 +15,27 @@
 #CONF=powerpc-elf-alone
 #CONF=powerpc-linux-gnu
 #CONF=powerpc-linux-gnu-alone
-CONF=
+#CONF=
+
+
+include ../../../../../../Makefile.cfg
+CONF = $(CONF_CONF)
 
 # Tools
-ARCH	= $(CONF)
-CC		= $(ARCH)gcc
-LD		= $(CC) 
-SIZE	= $(ARCH)size
-OBJCOPY	= $(ARCH)objcopy
-OBJDUMP = $(ARCH)objdump -d
+#ARCH	= $(CONF)
+#CC		= $(ARCH)gcc
+ARCH = $(CONF)
+CC = $(CONF_CC)
 
+
+LD		= $(CC) 
+#SIZE	= $(ARCH)size
+SIZE = size
+#OBJCOPY	= $(ARCH)objcopy
+OBJCOPY = objcopy
+#OBJDUMP = $(ARCH)objdump -d
+OBJDUMP = $(CONF_OBJDUMP) -d
 
 # Other configuration
-USER_CFLAGS		= -g3
-USER_LDFLAGS	=
+USER_CFLAGS		= $(CONF_CFLAGS)
+USER_LDFLAGS	= $(CONF_LDFLAGS)

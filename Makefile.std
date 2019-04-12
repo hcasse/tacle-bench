@@ -1,6 +1,8 @@
-CC=arm-linux-gnueabihf-gcc
-CFLAGS= -mfloat-abi=hard -march=armv7 -g3 -O2
-LDFLAGS= -static
+include ../../../Makefile.cfg
+
+CC = $(CONF_CC)
+CFLAGS = $(CONF_CFLAGS)
+LD_FLAGS = $(CONF_LDFLAGS)
 
 all: $(notdir $(CURDIR)).elf
 
