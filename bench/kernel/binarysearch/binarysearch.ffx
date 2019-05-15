@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="binarysearch_main" executed="true" extern="false">
+        <call name="binarysearch_binary_search" numcall="4" line="146" source="binarysearch.c" executed="true" extern="false">
+            <function name="binarysearch_binary_search">
+                <loop loopId="2" line="120" source="binarysearch.c" exact="false" maxcount="5" totalcount="5">
+                    <conditional id="IF-1"> <condition line="123" source="binarysearch.c" executed="true"> </condition>
+                        <case cond="1" executed="true" line="125" source="binarysearch.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                            <conditional id="IF-2"> <condition line="129" source="binarysearch.c" executed="true"> </condition>
+                                <case cond="1" executed="true" line="131" source="binarysearch.c">
+                                </case>
+                                <case cond="0" executed="true" line="133" source="binarysearch.c">
+                                </case>
+                            </conditional>
+                        </case>
+                    </conditional>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+
