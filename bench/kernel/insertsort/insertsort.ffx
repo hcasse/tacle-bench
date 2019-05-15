@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="insertsort_main" executed="true" extern="false">
+        <loop loopId="3" line="100" source="insertsort.c" exact="true" maxcount="9" totalcount="9">
+            <loop loopId="4" line="109" source="insertsort.c" exact="false" mincount="1" maxcount="10" totalcount="54">
+            </loop>
+            <conditional id="IF-1"> <condition line="119" source="insertsort.c" executed="true"> </condition>
+                <case cond="1" executed="true" line="120" source="insertsort.c">
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-2"> <condition line="121" source="insertsort.c" executed="true"> </condition>
+                <case cond="1" executed="true" line="122" source="insertsort.c">
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+        </loop>
+        <conditional id="IF-3"> <condition line="127" source="insertsort.c" executed="true"> </condition>
+            <case cond="1" executed="true" line="128" source="insertsort.c">
+            </case>
+            <case cond="0" executed="true" >
+            </case>
+        </conditional>
+        <conditional id="IF-4"> <condition line="129" source="insertsort.c" executed="true"> </condition>
+            <case cond="1" executed="true" line="130" source="insertsort.c">
+            </case>
+            <case cond="0" executed="true" >
+            </case>
+        </conditional>
+    </function>
+</flowfacts>
+

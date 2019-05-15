@@ -76,7 +76,7 @@ void insertsort_init()
 int insertsort_return()
 {
 	int i, returnValue=0;
-
+	_Pragma( "loopbound min 10 max 10" )
 	for ( i = 0; i < 10; i++ )
 		returnValue += insertsort_a[i];
 

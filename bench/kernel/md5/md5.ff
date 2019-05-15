@@ -1,0 +1,27 @@
+checksum "md5.elf" 0x890eeb47;
+
+// Function md5_main (md5.c:605)
+loop "md5_main" + 0x12 min 10 max 10 ; // 0x10d22 (md5.c:616)
+
+// Function md5_InitRandomStruct (md5.c:566)
+loop "md5_InitRandomStruct" + 0x12 min 16 max 64 ; // 0x10cc6 (md5.c:507)
+loop "md5_InitRandomStruct" + 0x26 min 257 max 257 ; // 0x10cda (md5.c:581)
+
+// Function md5_R_RandomUpdate (md5.c:528)
+loop "md5_R_RandomUpdate" + 0x6c min 16 max 16 ; // 0x10c88 (md5.c:542)
+
+// Function md5_update (md5.c:280)
+loop "md5_update" + 0x8c min 0 max 55 ; // 0x10b54 (md5.c:486)
+loop "md5_update" + 0x42 min 0 max 55 ; // 0x10b0a (md5.c:486)
+loop "md5_update" + 0x68 min 0 max 0 ; // 0x10b30 (md5.c:302)
+
+// Function md5_final (md5.c:320)
+loop "md5_final" + 0x4c min 64 max 136 ; // 0x10bb0 (md5.c:352)
+
+// Function md5_encode (md5.c:455)
+loop "md5_encode" + 0xe min 2 max 16 ; // 0x1036a (md5.c:456)
+
+// Function md5_decode (md5.c:472)
+loop "md5_decode" + 0x8 min 16 max 16 ; // 0x10398 (md5.c:474)
+
+

@@ -1,0 +1,11 @@
+checksum "jfdctint.elf" 0x29e58da5;
+
+// Function main (jfdctint.c:313)
+loop "main" + 0x1e min 64 max 64 ; // 0x10206 (jfdctint.c:154)
+loop "main" + 0x46 min 64 max 64 ; // 0x1022e (jfdctint.c:166)
+
+// Function jfdctint_jpeg_fdct_islow (jfdctint.c:211)
+loop "jfdctint_jpeg_fdct_islow" + 0x4e min 8 max 8 ; // 0x1041e (jfdctint.c:191)
+loop "jfdctint_jpeg_fdct_islow" + 0x1ac min 8 max 8 ; // 0x1057c (jfdctint.c:243)
+
+

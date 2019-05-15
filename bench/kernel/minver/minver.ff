@@ -1,0 +1,27 @@
+checksum "minver.elf" 0xbbddef57;
+
+// Function main (minver.c:251)
+loop "main" + 0x16 min 3 max 3 ; // 0x101fe (minver.c:251)
+	loop "main" + 0x1a min 3 max 3 ; // 0x10202 (minver.c:200)
+loop "main" + 0x48 min 9 max 9 ; // 0x10230 (minver.c:214)
+
+// Function minver_main (minver.c:227)
+loop "minver_main" + 0x1a min 9 max 9 ; // 0x10772 (minver.c:235)
+loop "minver_main" + 0x4a min 9 max 9 ; // 0x107a2 (minver.c:243)
+loop "minver_main" + 0xfffffc46 min 3 max 3 ; // 0x1039e (minver.c:87)
+	loop "minver_main" + 0xfffffc56 min 3 max 3 ; // 0x103ae (minver.c:90)
+		loop "minver_main" + 0xfffffc6e min 3 max 3 ; // 0x103c6 (minver.c:91)
+
+// Function minver_minver (minver.c:109)
+loop "minver_minver" + 0x2c min 3 max 3 ; // 0x10484 (minver.c:114)
+loop "minver_minver" + 0x64 min 3 max 3 ; // 0x104bc (minver.c:119)
+	loop "minver_minver" + 0x108 min 3 max 3 ; // 0x10560 (minver.c:147)
+	loop "minver_minver" + 0x120 min 3 max 3 ; // 0x10578 (minver.c:150)
+		loop "minver_minver" + 0x1d8 min 3 max 3 ; // 0x10630 (minver.c:155)
+	loop "minver_minver" + 0x70 min 1 max 3 ; // 0x104c8 (minver.c:120)
+	loop "minver_minver" + 0xec min 3 max 3 ; // 0x10544 (minver.c:140)
+loop "minver_minver" + 0x16c min 3 max 3 ; // 0x105c4 (minver.c:175)
+	loop "minver_minver" + 0x174 min 1 max 3 ; // 0x105cc (minver.c:175)
+		loop "minver_minver" + 0x198 min 3 max 3 ; // 0x105f0 (minver.c:175)
+
+

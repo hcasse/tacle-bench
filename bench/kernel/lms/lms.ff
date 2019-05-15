@@ -1,0 +1,19 @@
+checksum "lms.elf" 0x66582de2;
+
+// Function main (lms.c:176)
+loop "main" + 0x1c min 201 max 201 ; // 0x10204 (lms.c:169)
+
+// Function lms_init (lms.c:88)
+loop "lms_init" + 0x48 min 101 max 101 ; // 0x103f4 (lms.c:87)
+	loop "lms_init" + 0x4c min 3 max 3 ; // 0x103f8 (lms.c:87)
+
+// Function lms_main (lms.c:140)
+loop "lms_main" + 0x1c min 21 max 21 ; // 0x105ac (lms.c:148)
+loop "lms_main" + 0x40 min 201 max 201 ; // 0x105d0 (lms.c:154)
+
+// Function lms_calc (lms.c:111)
+loop "lms_calc" + 0x3e min 21 max 21 ; // 0x10536 (lms.c:125)
+loop "lms_calc" + 0x5e min 21 max 21 ; // 0x10556 (lms.c:133)
+loop "lms_calc" + 0x1a min 20 max 20 ; // 0x10512 (lms.c:117)
+
+

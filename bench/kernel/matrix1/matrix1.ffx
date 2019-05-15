@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="matrix1_main" executed="true" extern="false">
+        <loop loopId="5" line="145" source="matrix1.c" exact="true" maxcount="10" totalcount="10">
+            <loop loopId="6" line="149" source="matrix1.c" exact="true" maxcount="10" totalcount="100">
+                <loop loopId="7" line="154" source="matrix1.c" exact="true" maxcount="10" totalcount="1000">
+                </loop>
+            </loop>
+        </loop>
+    </function>
+</flowfacts>
+

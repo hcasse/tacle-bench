@@ -82,6 +82,7 @@ void lms_init( void )
   for ( k = 0 ; k < N ; k += 2 ) {
     double v1, v2, r;
     const double scaleFactor = 0.000000000931322574615478515625;
+    _Pragma( "loopbound min 3 max 3" )
     do {
       // generate two random numbers between -1.0 and +1.0
       seed = seed * 1103515245 + 12345;
