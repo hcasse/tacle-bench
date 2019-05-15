@@ -1,0 +1,7 @@
+checksum "bsort.elf" 0xf4fa5f3e;
+
+// Function bsort_main (bsort.c:117)
+loop "bsort_main" + 0xffffffd0 min 99 max 99 ; // 0x1038c (bsort.c:103)
+	loop "bsort_main" + 0xffffffd6 min 2 max 99 ; // 0x10392 (bsort.c:99)
+
+
