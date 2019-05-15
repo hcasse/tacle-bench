@@ -7,7 +7,7 @@ LD_FLAGS = $(CONF_LDFLAGS)
 all: $(notdir $(CURDIR)).elf
 
 %.elf: %.c *.c
-	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+	$(CC) $(CFLAGS) $^ -o $@ $(LD_FLAGS)
 
 
 #$(notdir $(CURDIR)): *.c
