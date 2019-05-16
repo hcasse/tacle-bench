@@ -1,4 +1,4 @@
-checksum "binarysearch.elf" 0xff5f52c3;
+//checksum "binarysearch.elf" 0xff5f52c3;
 
 // Function binarysearch_main (binarysearch.c:145)
 loop "binarysearch_main" + 0x20 min 1 max 4 ; // 0x1048c (binarysearch.c:121)
