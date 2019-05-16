@@ -1,18 +1,18 @@
-checksum "st.elf" 0xe0f42ef5;
+checksum "st.elf" 0x7089fc54;
 
 // Function st_init (st.c:88)
-loop "st_init" + 0x26 min 1000 max 1000 ; // 0x10476 (st.c:72)
-loop "st_init" + 0x6c min 1000 max 1000 ; // 0x104bc (st.c:72)
+loop "st_init" + 0x38 min 1000 max 1000 ; // 0x104e4 (st.c:72)
+loop "st_init" + 0x94 min 1000 max 1000 ; // 0x10540 (st.c:72)
 
 // Function st_main (st.c:209)
-loop "st_main" + 0x16 min 1000 max 1000 ; // 0x1070e (st.c:168)
-loop "st_main" + 0x56 min 1000 max 1000 ; // 0x1074e (st.c:168)
-loop "st_main" + 0xffffffba min 1000 max 1000 ; // 0x106b2 (st.c:195)
+loop "st_main" + 0x20 min 1000 max 1000 ; // 0x107e8 (st.c:168)
+loop "st_main" + 0x7c min 1000 max 1000 ; // 0x10844 (st.c:168)
+loop "st_main" + 0xffffffb4 min 1000 max 1000 ; // 0x1077c (st.c:195)
 
 // Function st_calc_Var_Stddev (st.c:176)
-loop "st_calc_Var_Stddev" + 0xa min 1000 max 1000 ; // 0x10672 (st.c:180)
+loop "st_calc_Var_Stddev" + 0xc min 1000 max 1000 ; // 0x10734 (st.c:180)
 
 // Function st_sqrtf (st.c:130)
-loop "st_sqrtf" + 0x22 min 19 max 19 ; // 0x105e2 (st.c:123)
+loop "st_sqrtf" + 0x24 min 19 max 19 ; // 0x10694 (st.c:123)
 
 

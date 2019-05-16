@@ -1,0 +1,18 @@
+checksum "bitcount.elf" 0xc5faf4e4;
+
+
+
+// Function bitcount_init3 (bitcnt_3.c:35)
+loop "bitcount_init3" + 0x3c min 256 max 256 ; // 0x10728 (bitcnt_3.c:55)
+
+// Function bitcount_init4 (bitcnt_4.c:35)
+loop "bitcount_init4" + 0x3c min 256 max 256 ; // 0x10884 (bitcnt_4.c:55)
+
+// Function bitcount_main (bitcount.c:93)
+loop "bitcount_main" + 0x58 min 8 max 8 ; // 0x104dc (bitcount.c:82)
+	loop "bitcount_main" + 0xc0 min 10 max 10 ; // 0x10544 (bitcount.c:101)
+
+// Function bitcount_bit_count (bitcnt_1.c:29)
+loop "bitcount_bit_count" + 0xc min 3 max 8 ; // 0x10950 (bitcnt_1.c:33)
+
+

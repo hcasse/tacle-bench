@@ -1,0 +1,11 @@
+checksum "countnegative.elf" 0xeba1e647;
+
+// Function countnegative_init (countnegative.c:84)
+loop "countnegative_init" + 0x40 min 20 max 20 ; // 0x10498 (countnegative.c:57)
+	loop "countnegative_init" + 0x44 min 20 max 20 ; // 0x1049c (countnegative.c:65)
+
+// Function countnegative_sum (countnegative.c:100)
+loop "countnegative_sum" + 0x28 min 20 max 20 ; // 0x1057c (countnegative.c:100)
+	loop "countnegative_sum" + 0x2c min 20 max 20 ; // 0x10580 (countnegative.c:112)
+
+

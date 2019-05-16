@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="deg2rad_main" executed="true" extern="false">
+        <loop loopId="1" line="80" source="deg2rad.c" exact="true" maxcount="361" totalcount="361">
+        </loop>
+    </function>
+</flowfacts>
+

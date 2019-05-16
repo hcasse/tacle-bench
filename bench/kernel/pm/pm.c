@@ -6,11 +6,11 @@
   Name: pm
 
   Author: Hector Chan
-          MIT Lincoln Laboratory
+  MIT Lincoln Laboratory
 
   Function: This is the ANSI C Pattern Match kernel. It finds the closest
-            match of a pattern from a library of patterns.  The code below
-            serves as a reference implemenation of the pattern match kernel.
+  match of a pattern from a library of patterns.  The code below
+  serves as a reference implemenation of the pattern match kernel.
 
   Source: HPEC Challenge Benchmark Suite, Pattern Match Kernel Benchmark
 
@@ -137,12 +137,12 @@ void pm_init_lib( pm_float_array_t *lib )
   lib->size[2] = 0;
 
   _Pragma( "loopbound min 60 max 60" )
-  for ( i = 0; i < 60; i++ )
-    pm_lib_ptr[i] = pm_lib_data[i];
+    for ( i = 0; i < 60; i++ )
+      pm_lib_ptr[i] = pm_lib_data[i];
 
   _Pragma( "loopbound min 60 max 60" )
-  for ( i = 0; i < 60; i++ )
-    pm_lib_ptr[i] += do_not_optimize_away;
+    for ( i = 0; i < 60; i++ )
+      pm_lib_ptr[i] += do_not_optimize_away;
 
   lib->data = *pm_lib_ptr;
   lib->datav = ( void * )pm_lib_ptr;
@@ -161,12 +161,12 @@ void pm_init_pattern( pm_float_array_t *pattern )
   pattern->size[2] = 0;
 
   _Pragma( "loopbound min 60 max 60" )
-  for ( i = 0; i < 60; i++ )
-    pm_pattern_ptr[i] = pm_pattern_data[i];
+    for ( i = 0; i < 60; i++ )
+      pm_pattern_ptr[i] = pm_pattern_data[i];
 
   _Pragma( "loopbound min 60 max 60" )
-  for ( i = 0; i < 60; i++ )
-    pm_pattern_ptr[i] += do_not_optimize_away;
+    for ( i = 0; i < 60; i++ )
+      pm_pattern_ptr[i] += do_not_optimize_away;
 
   pattern->data = *pm_pattern_ptr;
   pattern->datav = ( void * )pm_pattern_ptr;
@@ -222,8 +222,8 @@ void pm_init_data( pm_data_t *pmdata, pm_float_array_t *lib,
   /* Equivalent to shift_size = roundf((float)profile_size / shift_ratio) */
   x = ( float )( pmdata->profile_size ) / pmdata->shift_ratio;
   pmdata->shift_size = ( ( x - ( int )( x ) ) < 0.5f ) ?
-                       ( int )( pm_floor( x ) ) :
-                       ( int )( pm_ceil( x ) );
+    ( int )( pm_floor( x ) ) :
+    ( int )( pm_ceil( x ) );
 
   pmdata->template_exceed     = pm_init_array_1;
   pmdata->test_exceed_means   = pm_init_array_2;
@@ -285,20 +285,20 @@ int pm_kernel( pm_data_t *pmdata )
   int min_MSE_index; /* the index of the range shifts with
                         the lowest mean square error */
   unsigned int num_template_exceed,
-           num_test_exceed; /* the number of pixels exceeded the test pattern
-                               and a library template */
+    num_test_exceed; /* the number of pixels exceeded the test pattern
+			and a library template */
 
   unsigned char mag_shift_scores_flag; /* flag that tells if the magnitude
                                           scaling loop has been run
                                           (existed just to save ops) */
 
   float test_peak,
-        template_peak; /* the maximum pixels of the test pattern and a library
-                          template pattern */
+    template_peak; /* the maximum pixels of the test pattern and a library
+		      template pattern */
   float template_noise; /* the noise level of a library template */
 
   float noise_shift,
-        noise_shift2; /* temporary storage for calculating the mse for range shifting */
+    noise_shift2; /* temporary storage for calculating the mse for range shifting */
 
   float min_MSE, match_score; /* temporary storage for finding the minimum mse */
 
@@ -309,8 +309,8 @@ int pm_kernel( pm_data_t *pmdata )
 
   float mag_db; /* the magnitude shifts in dB */
   float power_shift,
-        ave_power_ratio; /* the diff of the avg shifted test profile power to
-                            the avg template power */
+    ave_power_ratio; /* the diff of the avg shifted test profile power to
+			the avg template power */
   float power_ratio; /* the mean power of the pixels of a template that exceeded
                         twice test noise */
 
@@ -328,9 +328,9 @@ int pm_kernel( pm_data_t *pmdata )
   float *mag_shift_scores  = pmdata->mag_shift_scores;
 
   float test_noise_db = ( test_noise == 0.0f ) ? -100.0f : 10.0f *
-                        pm_log10f( pm_fabs( test_noise ) ); /* test noise in dB */
+    pm_log10f( pm_fabs( test_noise ) ); /* test noise in dB */
   float test_noise_db_plus_3 = test_noise_db + 3.0f; /* twice test noise in the
-                                             power domain, approximately +3dB */
+							power domain, approximately +3dB */
 
   float *template_copy = pmdata->template_copy;
   unsigned char *template_exceed = pmdata->template_exceed;
@@ -351,35 +351,35 @@ int pm_kernel( pm_data_t *pmdata )
 
   /* Having an array of test noise for fast copying of noise returns */
   _Pragma( "loopbound min 64 max 64" )
-  for ( i = 0; i < profile_size; i++ )
-    test_noise_db_array[i] = test_noise_db;
+    for ( i = 0; i < profile_size; i++ )
+      test_noise_db_array[i] = test_noise_db;
 
   /* Finding the maximum pixels of the test pattern */
   fptr = test_profile_db;
   test_peak = *fptr++;
   _Pragma( "loopbound min 63 max 63" )
-  for ( i = 1; i < profile_size; i++, fptr++ ) {
-    if ( test_peak < *fptr )
-      test_peak = *fptr;
-  }
+    for ( i = 1; i < profile_size; i++, fptr++ ) {
+      if ( test_peak < *fptr )
+	test_peak = *fptr;
+    }
 
   /* Paddle array for all the possible range shifts. Essentially, we are
      performing the following:
 
      Adding these two portions to the beginning and end of the test pattern
-          |                          |
-          V                          V
-      |<------>|                 |<------>|
+     |                          |
+     V                          V
+     |<------>|                 |<------>|
 
-                   __       __
-                  |  |     |  |
-                 |    |___|    |
-                |               |
-      _________|                 |_________   <- test noise in dB domain
+     __       __
+     |  |     |  |
+     |    |___|    |
+     |               |
+     _________|                 |_________   <- test noise in dB domain
      ---------------------------------------  <- zero
 
-               |<--------------->|
-               original test pattern
+     |<--------------->|
+     original test pattern
 
 
      The all_shifted_test_db will be accessed in a sliding window manner.
@@ -396,336 +396,336 @@ int pm_kernel( pm_data_t *pmdata )
      noise in dB */
   fptr = all_shifted_test_db + half_shift_size;
   _Pragma( "loopbound min 64 max 64" )
-  for ( i = 0; i < profile_size; i++, fptr++ ) {
-    if ( *fptr < test_noise_db )
-      *fptr = test_noise_db;
-  }
+    for ( i = 0; i < profile_size; i++, fptr++ ) {
+      if ( *fptr < test_noise_db )
+	*fptr = test_noise_db;
+    }
 
   /* Calculating the mean of the pixels that exceeded twice test noise for each
      possible shift of the test profile */
   fptr2 = test_exceed_means;
   _Pragma( "loopbound min 21 max 21" )
-  for ( current_shift = 0; current_shift < shift_size; current_shift++ ) {
-    /* Pointer arithmetics to find the start and end pointers */
-    if ( current_shift < half_shift_size ) {
-      endptr = all_shifted_test_db + current_shift + profile_size;
-      fptr   = all_shifted_test_db + half_shift_size;
-    } else {
-      endptr = all_shifted_test_db + half_shift_size + profile_size;
-      fptr   = all_shifted_test_db + current_shift;
-    }
-
-    /* Summing the pixels that exceed twice test noise for the current shifts */
-    sum_exceed = 0.0f;
-    num_test_exceed = 0;
-    _Pragma( "loopbound min 53 max 64" )
-    while ( fptr != endptr ) {
-      if ( *fptr > test_noise_db_plus_3 ) {
-        num_test_exceed++;
-        sum_exceed += *fptr;
+    for ( current_shift = 0; current_shift < shift_size; current_shift++ ) {
+      /* Pointer arithmetics to find the start and end pointers */
+      if ( current_shift < half_shift_size ) {
+	endptr = all_shifted_test_db + current_shift + profile_size;
+	fptr   = all_shifted_test_db + half_shift_size;
+      } else {
+	endptr = all_shifted_test_db + half_shift_size + profile_size;
+	fptr   = all_shifted_test_db + current_shift;
       }
-      fptr++;
-    }
 
-    *fptr2++ = num_test_exceed ?
-               sum_exceed / ( float )( num_test_exceed ) :
-               0.0f;
-  }
+      /* Summing the pixels that exceed twice test noise for the current shifts */
+      sum_exceed = 0.0f;
+      num_test_exceed = 0;
+      _Pragma( "loopbound min 53 max 64" )
+	while ( fptr != endptr ) {
+	  if ( *fptr > test_noise_db_plus_3 ) {
+	    num_test_exceed++;
+	    sum_exceed += *fptr;
+	  }
+	  fptr++;
+	}
+
+      *fptr2++ = num_test_exceed ?
+	sum_exceed / ( float )( num_test_exceed ) :
+	0.0f;
+    }
 
 
   /* Loop over all the templates. Determine the best shift distance, then
      the best gain adjustment. */
   _Pragma( "loopbound min 60 max 60" )
-  for ( template_index = 0; template_index < num_templates; template_index++ ) {
-    cur_tp = template_profiles_db + ( template_index * profile_size );
+    for ( template_index = 0; template_index < num_templates; template_index++ ) {
+      cur_tp = template_profiles_db + ( template_index * profile_size );
 
-    /* Scale the template profile we're currently working on so that its peak
-       is equal to the peak of the test profile */
+      /* Scale the template profile we're currently working on so that its peak
+	 is equal to the peak of the test profile */
 
-    fptr = cur_tp;
-    template_peak = *fptr++;
-    _Pragma( "loopbound min 63 max 63" )
-    for ( i = 1; i < profile_size; i++, fptr++ ) {
-      if ( template_peak < *fptr )
-        template_peak = *fptr;
-    }
+      fptr = cur_tp;
+      template_peak = *fptr++;
+      _Pragma( "loopbound min 63 max 63" )
+	for ( i = 1; i < profile_size; i++, fptr++ ) {
+	  if ( template_peak < *fptr )
+	    template_peak = *fptr;
+	}
 
-    /* Additively adjust the noise level of this template profile in the
-       raw power domain so that its noise level matches the noise level
-       of the test profile */
+      /* Additively adjust the noise level of this template profile in the
+	 raw power domain so that its noise level matches the noise level
+	 of the test profile */
 
-    /* --------------------------------------------------------------------
-       Setting up all the constants */
+      /* --------------------------------------------------------------------
+	 Setting up all the constants */
 
-    noise_shift  = test_peak - template_peak;
-    pm_memset ( ( void * )template_exceed, 0,
-                ( ( int )sizeof( char ) )*profile_size );
-    sum_exceed = 0.0f;
-    num_template_exceed = 0;
+      noise_shift  = test_peak - template_peak;
+      pm_memset ( ( void * )template_exceed, 0,
+		  ( ( int )sizeof( char ) )*profile_size );
+      sum_exceed = 0.0f;
+      num_template_exceed = 0;
 
-    /* --------------------------------------------------------------------
-       The following blocks are optimized code that essentially
-       perform the operations immediately below. The calculation of the
-       template noise constants is done once the exponentials are complete
-    */
+      /* --------------------------------------------------------------------
+	 The following blocks are optimized code that essentially
+	 perform the operations immediately below. The calculation of the
+	 template noise constants is done once the exponentials are complete
+      */
 
-    /* template_profile = template_profile + test_peak - template_peak
-       template = 10 ^ (template_profile / 10)
-       template = template + test_noise - template_noise
-       if (input < fp_epsilon) then clip the input to -100 dB
-       template = log10( abs(template) )
-       template_profile = 10 * template + test_noise_db */
+      /* template_profile = template_profile + test_peak - template_peak
+	 template = 10 ^ (template_profile / 10)
+	 template = template + test_noise - template_noise
+	 if (input < fp_epsilon) then clip the input to -100 dB
+	 template = log10( abs(template) )
+	 template_profile = 10 * template + test_noise_db */
 
-    fptr = cur_tp;
-    _Pragma( "loopbound min 64 max 64" )
-    for ( i = 0; i < profile_size; i++ ) {
-      tmp1 = *fptr + noise_shift;
-      *fptr = pm_pow10f( tmp1 * 0.1f );
-      fptr++;
-
-    }
-
-    /* Calculates noise levels from first and last elements of the current
-       template */
-
-    template_noise = ( cur_tp[0] + cur_tp[profile_size - 1] ) * 0.5f;
-    noise_shift2 = test_noise - template_noise;
-
-    fptr = cur_tp;
-    _Pragma( "loopbound min 64 max 64" )
-    for ( i = 0; i < profile_size; i++ ) {
-      tmp1 = *fptr + noise_shift2;
-
-      if ( tmp1 == 0.0f )
-        tmp1 = pm_MIN_NOISE;
-
-      *fptr = 10.0f * pm_log10f( pm_fabs( tmp1 ) ) + test_noise_db;
-
-      /* Because many of the operations in the search for the best shift
-         amount depend on knowledge of which pixels in the template
-         have values exceeding twice test_noise (recall that 3db is roughly
-         equivalent to a doubling of raw power), we'll put those indices in
-         template_exceed */
-
-      if ( *fptr > test_noise_db_plus_3 ) {
-        template_exceed[i] = 1;
-        num_template_exceed++;
-        sum_exceed += *fptr;
-      }
-
-      fptr++;
-    }
-
-    /* Note: The following block has 4 different branches:
-       1. Both the current template and the test pattern have values exceeded
-          twice test noise.
-       2. Only the current template has values exceeded twice test noise.
-       3. Only the test pattern has values exceeded twice test noise.
-       4. Neither the current template nor the test pattern has values
-          exceeded twice test noise.
-    */
-
-    /* If there is at least one pixel in the template we're
-       currently working on whose value exceeds twice test_noise */
-    if ( num_template_exceed ) {
-      template_exceed_mean = sum_exceed / ( float )( num_template_exceed );
-      fptr3 = test_exceed_means;
-
-      _Pragma( "loopbound min 21 max 21" )
-      for ( current_shift = 0; current_shift < shift_size;
-            current_shift++, fptr3++ ) {
-        /* Work on a copy of the template we're currently working on */
-        pm_memcpy ( ( void * )template_copy, ( void * )cur_tp, patsize );
-
-        /* If there is at least one pixel in the shifted test profile
-           whose value exceeds twice test noise. */
-        if ( *fptr3 != 0.0f ) {
-          /* CASE 1 */
-          /* Considering only those pixels whose powers exceed twice
-             test noise, compute the difference of the mean power in
-             template we're currently working on. */
-          power_ratio = *fptr3 - template_exceed_mean;
-
-          /* Scale template values that exceed twice test noise by power ratio
-             and set the values that are less than test noise in db to test
-             noise in db */
-          fptr  = template_copy;
-          bptr  = template_exceed;
-          _Pragma( "loopbound min 64 max 64" )
-          for ( i = 0; i < profile_size; i++, fptr++ ) {
-            if ( *bptr++ )
-              *fptr += power_ratio;
-
-            if ( *fptr < test_noise_db )
-              *fptr = test_noise_db;
-          }
-        } /* if (*fptr3 != 0.0f) */
-        else {
-          /* CASE 2 */
-          /* Set those pixels in the template we're currently working on
-             whose values are less than test_noise to test_noise. */
-          fptr = cur_tp;
-          _Pragma( "loopbound min 64 max 64" )
-          for ( i = 0; i < profile_size; i++ ) {
-            if ( *fptr++ < test_noise_db )
-              template_copy[i] = test_noise_db;
-          }
-        } /* else ... if (num_test_exceed) */
-
-        /* Compute the weighted MSE */
-        weighted_MSE = 0.0f;
-        fptr  = all_shifted_test_db + current_shift;
-        fptr2 = template_copy;
-        _Pragma( "loopbound min 64 max 64" )
-        for ( i = 0; i < profile_size; i++ ) {
-          tmp1 = *fptr++ - *fptr2++;
-          weighted_MSE += tmp1 * tmp1;
-        }
-
-        MSE_scores[current_shift] = weighted_MSE * sumWeights_inv;
-
-      } /* for current_shift */
-    } else { /* if (num_template_exceed) */
-      fptr3 = test_exceed_means;
-
-      _Pragma( "loopbound min 0 max 0" )
-      for ( current_shift = 0; current_shift < shift_size; current_shift++ ) {
-        /* CASE 3 */
-        /* If there is at least one pixel that exceeds twice test noise */
-        if ( *fptr3++ != 0.0f )
-          fptr2 = cur_tp;
-        else {
-          /* CASE 4 */
-          /* Work on a copy of the template we're currently working on. */
-          pm_memcpy ( ( void * )template_copy, ( void * )cur_tp, patsize );
-
-          fptr = cur_tp;
-          _Pragma( "loopbound min 0 max 0" )
-          for ( i = 0; i < profile_size; i++ ) {
-            if ( *fptr++ < test_noise_db )
-              template_copy[i] = test_noise_db;
-          }
-
-          fptr2 = template_copy;
-        }
-
-        /* Compute the weighted MSE */
-        weighted_MSE = 0.0f;
-        fptr  = all_shifted_test_db + current_shift;
-        _Pragma( "loopbound min 0 max 0" )
-        for ( i = 0; i < profile_size; i++ ) {
-          tmp1 = *fptr++ - *fptr2++;
-          weighted_MSE += tmp1 * tmp1;
-        }
-
-        MSE_scores[current_shift] = weighted_MSE * sumWeights_inv;
-
-      } /* for current_shift */
-    } /* else .. if (num_template_exceed) */
-
-    /* Finding the minimum MSE for range shifting */
-    fptr = MSE_scores;
-    min_MSE_index = 0;
-    min_MSE = *fptr++;
-    _Pragma( "loopbound min 20 max 20" )
-    for ( i = 1; i < shift_size; i++, fptr++ ) {
-      if ( min_MSE > *fptr ) {
-        min_MSE = *fptr;
-        min_MSE_index = i;
-      }
-    }
-
-    /* Work on a copy of the template we're currently working on. */
-    pm_memcpy( ( void * )template_copy, ( void * )cur_tp, patsize );
-
-    mag_shift_scores_flag = 1;
-
-    if ( test_exceed_means[min_MSE_index] != 0.0f ) {
-      if ( num_template_exceed ) {
-        /* Compute the difference of the average shifted test profile
-           power to the average template power */
-        ave_power_ratio = test_exceed_means[min_MSE_index]
-                          - template_exceed_mean;
-
-        /* Loop over all possible magnitude shifts */
-        _Pragma( "loopbound min 21 max 21" )
-        for ( j = 0, mag_db = -5.0f; mag_db <= 5.0f; mag_db += 0.5f ) {
-          power_shift = ave_power_ratio + mag_db;
-
-          bptr  = template_exceed;
-          _Pragma( "loopbound min 64 max 64" )
-          for ( i = 0; i < profile_size; i++ ) {
-            if ( *bptr++ )
-              template_copy[i] = cur_tp[i] + power_shift;
-          }
-
-          /* Compute the weighted MSE */
-          weighted_MSE = 0.0f;
-          fptr  = all_shifted_test_db + min_MSE_index;
-          fptr2 = template_copy;
-          _Pragma( "loopbound min 64 max 64" )
-          for ( i = 0; i < profile_size; i++ ) {
-            tmp1 = *fptr++ - *fptr2++;
-            weighted_MSE += tmp1 * tmp1;
-          }
-
-          mag_shift_scores[j++] = weighted_MSE * sumWeights_inv;
-
-        } /* for mag_db */
-      } /* if (num_template_exceed) */
-
-    } else { /* if (num_test_exceed) */
-      /* Set those pixels in the template we're currently working on
-         whose values are less than test_noise to test_noise. */
       fptr = cur_tp;
       _Pragma( "loopbound min 64 max 64" )
-      for ( i = 0; i < profile_size; i++ ) {
-        if ( *fptr++ < test_noise_db )
-          template_copy[i] = test_noise_db;
-      }
+	for ( i = 0; i < profile_size; i++ ) {
+	  tmp1 = *fptr + noise_shift;
+	  *fptr = pm_pow10f( tmp1 * 0.1f );
+	  fptr++;
 
-      /* Compute the weighted MSE */
-      weighted_MSE = 0.0f;
-      fptr = all_shifted_test_db + min_MSE_index;
-      fptr2 = template_copy;
+	}
+
+      /* Calculates noise levels from first and last elements of the current
+	 template */
+
+      template_noise = ( cur_tp[0] + cur_tp[profile_size - 1] ) * 0.5f;
+      noise_shift2 = test_noise - template_noise;
+
+      fptr = cur_tp;
       _Pragma( "loopbound min 64 max 64" )
-      for ( i = 0; i < profile_size; i++ ) {
-        tmp1 = *fptr++ - *fptr2++;
-        weighted_MSE += tmp1 * tmp1;
-      }
+	for ( i = 0; i < profile_size; i++ ) {
+	  tmp1 = *fptr + noise_shift2;
 
-      minimum_MSE_score[template_index] = weighted_MSE * sumWeights_inv;
+	  if ( tmp1 == 0.0f )
+	    tmp1 = pm_MIN_NOISE;
 
-      mag_shift_scores_flag = 0;
-    } /* if (num_test_exceed) */
+	  *fptr = 10.0f * pm_log10f( pm_fabs( tmp1 ) ) + test_noise_db;
 
-    /* If magnitude shifting has performed above */
-    if ( mag_shift_scores_flag ) {
-      /* Find the minimum MSE for magnitude scaling */
-      fptr = mag_shift_scores;
+	  /* Because many of the operations in the search for the best shift
+	     amount depend on knowledge of which pixels in the template
+	     have values exceeding twice test_noise (recall that 3db is roughly
+	     equivalent to a doubling of raw power), we'll put those indices in
+	     template_exceed */
+
+	  if ( *fptr > test_noise_db_plus_3 ) {
+	    template_exceed[i] = 1;
+	    num_template_exceed++;
+	    sum_exceed += *fptr;
+	  }
+
+	  fptr++;
+	}
+
+      /* Note: The following block has 4 different branches:
+	 1. Both the current template and the test pattern have values exceeded
+	 twice test noise.
+	 2. Only the current template has values exceeded twice test noise.
+	 3. Only the test pattern has values exceeded twice test noise.
+	 4. Neither the current template nor the test pattern has values
+	 exceeded twice test noise.
+      */
+
+      /* If there is at least one pixel in the template we're
+	 currently working on whose value exceeds twice test_noise */
+      if ( num_template_exceed ) {
+	template_exceed_mean = sum_exceed / ( float )( num_template_exceed );
+	fptr3 = test_exceed_means;
+
+	_Pragma( "loopbound min 21 max 21" )
+	  for ( current_shift = 0; current_shift < shift_size;
+		current_shift++, fptr3++ ) {
+	    /* Work on a copy of the template we're currently working on */
+	    pm_memcpy ( ( void * )template_copy, ( void * )cur_tp, patsize );
+
+	    /* If there is at least one pixel in the shifted test profile
+	       whose value exceeds twice test noise. */
+	    if ( *fptr3 != 0.0f ) {
+	      /* CASE 1 */
+	      /* Considering only those pixels whose powers exceed twice
+		 test noise, compute the difference of the mean power in
+		 template we're currently working on. */
+	      power_ratio = *fptr3 - template_exceed_mean;
+
+	      /* Scale template values that exceed twice test noise by power ratio
+		 and set the values that are less than test noise in db to test
+		 noise in db */
+	      fptr  = template_copy;
+	      bptr  = template_exceed;
+	      _Pragma( "loopbound min 64 max 64" )
+		for ( i = 0; i < profile_size; i++, fptr++ ) {
+		  if ( *bptr++ )
+		    *fptr += power_ratio;
+
+		  if ( *fptr < test_noise_db )
+		    *fptr = test_noise_db;
+		}
+	    } /* if (*fptr3 != 0.0f) */
+	    else {
+	      /* CASE 2 */
+	      /* Set those pixels in the template we're currently working on
+		 whose values are less than test_noise to test_noise. */
+	      fptr = cur_tp;
+	      _Pragma( "loopbound min 64 max 64" )
+		for ( i = 0; i < profile_size; i++ ) {
+		  if ( *fptr++ < test_noise_db )
+		    template_copy[i] = test_noise_db;
+		}
+	    } /* else ... if (num_test_exceed) */
+
+	    /* Compute the weighted MSE */
+	    weighted_MSE = 0.0f;
+	    fptr  = all_shifted_test_db + current_shift;
+	    fptr2 = template_copy;
+	    _Pragma( "loopbound min 64 max 64" )
+	      for ( i = 0; i < profile_size; i++ ) {
+		tmp1 = *fptr++ - *fptr2++;
+		weighted_MSE += tmp1 * tmp1;
+	      }
+
+	    MSE_scores[current_shift] = weighted_MSE * sumWeights_inv;
+
+	  } /* for current_shift */
+      } else { /* if (num_template_exceed) */
+	fptr3 = test_exceed_means;
+
+	_Pragma( "loopbound min 0 max 0" )
+	  for ( current_shift = 0; current_shift < shift_size; current_shift++ ) {
+	    /* CASE 3 */
+	    /* If there is at least one pixel that exceeds twice test noise */
+	    if ( *fptr3++ != 0.0f )
+	      fptr2 = cur_tp;
+	    else {
+	      /* CASE 4 */
+	      /* Work on a copy of the template we're currently working on. */
+	      pm_memcpy ( ( void * )template_copy, ( void * )cur_tp, patsize );
+
+	      fptr = cur_tp;
+	      _Pragma( "loopbound min 0 max 0" )
+		for ( i = 0; i < profile_size; i++ ) {
+		  if ( *fptr++ < test_noise_db )
+		    template_copy[i] = test_noise_db;
+		}
+
+	      fptr2 = template_copy;
+	    }
+
+	    /* Compute the weighted MSE */
+	    weighted_MSE = 0.0f;
+	    fptr  = all_shifted_test_db + current_shift;
+	    _Pragma( "loopbound min 0 max 0" )
+	      for ( i = 0; i < profile_size; i++ ) {
+		tmp1 = *fptr++ - *fptr2++;
+		weighted_MSE += tmp1 * tmp1;
+	      }
+
+	    MSE_scores[current_shift] = weighted_MSE * sumWeights_inv;
+
+	  } /* for current_shift */
+      } /* else .. if (num_template_exceed) */
+
+      /* Finding the minimum MSE for range shifting */
+      fptr = MSE_scores;
+      min_MSE_index = 0;
       min_MSE = *fptr++;
       _Pragma( "loopbound min 20 max 20" )
-      for ( i = 1; i < 21; i++, fptr++ ) {
-        if ( min_MSE > *fptr )
-          min_MSE = *fptr;
+	for ( i = 1; i < shift_size; i++, fptr++ ) {
+	  if ( min_MSE > *fptr ) {
+	    min_MSE = *fptr;
+	    min_MSE_index = i;
+	  }
+	}
+
+      /* Work on a copy of the template we're currently working on. */
+      pm_memcpy( ( void * )template_copy, ( void * )cur_tp, patsize );
+
+      mag_shift_scores_flag = 1;
+
+      if ( test_exceed_means[min_MSE_index] != 0.0f ) {
+	if ( num_template_exceed ) {
+	  /* Compute the difference of the average shifted test profile
+	     power to the average template power */
+	  ave_power_ratio = test_exceed_means[min_MSE_index]
+	    - template_exceed_mean;
+
+	  /* Loop over all possible magnitude shifts */
+	  _Pragma( "loopbound min 21 max 21" )
+	    for ( j = 0, mag_db = -5.0f; mag_db <= 5.0f; mag_db += 0.5f ) {
+	      power_shift = ave_power_ratio + mag_db;
+
+	      bptr  = template_exceed;
+	      _Pragma( "loopbound min 64 max 64" )
+		for ( i = 0; i < profile_size; i++ ) {
+		  if ( *bptr++ )
+		    template_copy[i] = cur_tp[i] + power_shift;
+		}
+
+	      /* Compute the weighted MSE */
+	      weighted_MSE = 0.0f;
+	      fptr  = all_shifted_test_db + min_MSE_index;
+	      fptr2 = template_copy;
+	      _Pragma( "loopbound min 64 max 64" )
+		for ( i = 0; i < profile_size; i++ ) {
+		  tmp1 = *fptr++ - *fptr2++;
+		  weighted_MSE += tmp1 * tmp1;
+		}
+
+	      mag_shift_scores[j++] = weighted_MSE * sumWeights_inv;
+
+	    } /* for mag_db */
+	} /* if (num_template_exceed) */
+
+      } else { /* if (num_test_exceed) */
+	/* Set those pixels in the template we're currently working on
+	   whose values are less than test_noise to test_noise. */
+	fptr = cur_tp;
+	_Pragma( "loopbound min 64 max 64" )
+	  for ( i = 0; i < profile_size; i++ ) {
+	    if ( *fptr++ < test_noise_db )
+	      template_copy[i] = test_noise_db;
+	  }
+
+	/* Compute the weighted MSE */
+	weighted_MSE = 0.0f;
+	fptr = all_shifted_test_db + min_MSE_index;
+	fptr2 = template_copy;
+	_Pragma( "loopbound min 64 max 64" )
+	  for ( i = 0; i < profile_size; i++ ) {
+	    tmp1 = *fptr++ - *fptr2++;
+	    weighted_MSE += tmp1 * tmp1;
+	  }
+
+	minimum_MSE_score[template_index] = weighted_MSE * sumWeights_inv;
+
+	mag_shift_scores_flag = 0;
+      } /* if (num_test_exceed) */
+
+      /* If magnitude shifting has performed above */
+      if ( mag_shift_scores_flag ) {
+	/* Find the minimum MSE for magnitude scaling */
+	fptr = mag_shift_scores;
+	min_MSE = *fptr++;
+	_Pragma( "loopbound min 20 max 20" )
+	  for ( i = 1; i < 21; i++, fptr++ ) {
+	    if ( min_MSE > *fptr )
+	      min_MSE = *fptr;
+	  }
+
+	minimum_MSE_score[template_index] = min_MSE;
       }
 
-      minimum_MSE_score[template_index] = min_MSE;
-    }
-
-  } /* for template_index */
+    } /* for template_index */
 
   /* Find the minimum mean square error */
   fptr = minimum_MSE_score;
   match_index = 0;
   match_score = *fptr++;
   _Pragma( "loopbound min 59 max 59" )
-  for ( i = 1; i < num_templates; i++, fptr++ ) {
-    if ( match_score > *fptr ) {
-      match_score = *fptr;
-      match_index = i;
+    for ( i = 1; i < num_templates; i++, fptr++ ) {
+      if ( match_score > *fptr ) {
+	match_score = *fptr;
+	match_index = i;
+      }
     }
-  }
 
   return match_index;
 }

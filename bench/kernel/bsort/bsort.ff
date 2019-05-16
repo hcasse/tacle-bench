@@ -1,7 +1,11 @@
-checksum "bsort.elf" 0xf4fa5f3e;
+checksum "bsort.elf" 0x43590fe9;
 
-// Function bsort_main (bsort.c:117)
-loop "bsort_main" + 0xffffffd0 min 99 max 99 ; // 0x1038c (bsort.c:103)
-	loop "bsort_main" + 0xffffffd6 min 2 max 99 ; // 0x10392 (bsort.c:99)
+// Function main (bsort.c:126)
+loop "main" + 0x18 min 100 max 100 ; // 0x10200 (bsort.c:57)
+loop "main" + 0x3c min 99 max 99 ; // 0x10224 (bsort.c:75)
+
+// Function bsort_BubbleSort (bsort.c:88)
+loop "bsort_BubbleSort" + 0x8 min 99 max 99 ; // 0x103e0 (bsort.c:103)
+	loop "bsort_BubbleSort" + 0x14 min 2 max 99 ; // 0x103ec (bsort.c:99)
 
 

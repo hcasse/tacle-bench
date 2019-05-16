@@ -1,21 +1,21 @@
-checksum "ludcmp.elf" 0x3cd8e7ef;
+checksum "ludcmp.elf" 0x7262761a;
 
 // Function main (ludcmp.c:174)
-loop "main" + 0x2c min 6 max 6 ; // 0x10214 (ludcmp.c:79)
+loop "main" + 0x40 min 6 max 6 ; // 0x10228 (ludcmp.c:79)
 
 // Function ludcmp_init (ludcmp.c:57)
-loop "ludcmp_init" + 0x1a min 6 max 6 ; // 0x105ae (ludcmp.c:51)
-	loop "ludcmp_init" + 0x24 min 6 max 6 ; // 0x105b8 (ludcmp.c:54)
+loop "ludcmp_init" + 0x30 min 6 max 6 ; // 0x1068c (ludcmp.c:51)
+	loop "ludcmp_init" + 0x40 min 6 max 6 ; // 0x1069c (ludcmp.c:54)
 
 // Function ludcmp_test.part.0 (ludcmp.c:98)
-loop "ludcmp_test.part.0" + 0x1d8 min 5 max 5 ; // 0x10548 (ludcmp.c:157)
-	loop "ludcmp_test.part.0" + 0x1e4 min 1 max 5 ; // 0x10554 (ludcmp.c:158)
-loop "ludcmp_test.part.0" + 0x50 min 5 max 5 ; // 0x103c0 (ludcmp.c:109)
-	loop "ludcmp_test.part.0" + 0xcc min 1 max 5 ; // 0x1043c (ludcmp.c:127)
-		loop "ludcmp_test.part.0" + 0xd4 min 1 max 5 ; // 0x10444 (ludcmp.c:131)
-	loop "ludcmp_test.part.0" + 0x84 min 1 max 5 ; // 0x103f4 (ludcmp.c:114)
-		loop "ludcmp_test.part.0" + 0x92 min 1 max 4 ; // 0x10402 (ludcmp.c:119)
-loop "ludcmp_test.part.0" + 0x134 min 5 max 5 ; // 0x104a4 (ludcmp.c:141)
-	loop "ludcmp_test.part.0" + 0x142 min 1 max 5 ; // 0x104b2 (ludcmp.c:145)
+loop "ludcmp_test.part.0" + 0x26c min 5 max 5 ; // 0x105f4 (ludcmp.c:157)
+	loop "ludcmp_test.part.0" + 0x280 min 1 max 5 ; // 0x10608 (ludcmp.c:158)
+loop "ludcmp_test.part.0" + 0x74 min 5 max 5 ; // 0x103fc (ludcmp.c:109)
+	loop "ludcmp_test.part.0" + 0xb0 min 1 max 5 ; // 0x10438 (ludcmp.c:118)
+		loop "ludcmp_test.part.0" + 0xc8 min 1 max 4 ; // 0x10450 (ludcmp.c:119)
+	loop "ludcmp_test.part.0" + 0x114 min 1 max 5 ; // 0x1049c (ludcmp.c:127)
+		loop "ludcmp_test.part.0" + 0x120 min 1 max 5 ; // 0x104a8 (ludcmp.c:131)
+loop "ludcmp_test.part.0" + 0x19c min 5 max 5 ; // 0x10524 (ludcmp.c:141)
+	loop "ludcmp_test.part.0" + 0x1b0 min 1 max 5 ; // 0x10538 (ludcmp.c:145)
 
 

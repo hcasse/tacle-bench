@@ -162,6 +162,7 @@ int jfdctint_return()
 {
   int checksum = 0;
   int i;
+  _Pragma( "loopbound min 64 max 64" )
   for ( i = 0; i < 64; ++i )
     checksum += jfdctint_data[ i ];
   return ( ( checksum == jfdctint_CHECKSUM ) ? 0 : -1 );

@@ -1,0 +1,25 @@
+checksum "fft.elf" 0xb3ac4f6b;
+
+// Function main (fft.c:326)
+loop "main" + 0x30 min 2048 max 2048 ; // 0x10218 (fft.c:308)
+
+// Function fft_init (fft.c:284)
+loop "fft_init" + 0x40 min 2048 max 2048 ; // 0x106ec (fft.c:292)
+
+// Function fft_bit_reduct (fft.c:112)
+loop "fft_bit_reduct" + 0xc0 min 10 max 10 ; // 0x103f8 (fft.c:114)
+	loop "fft_bit_reduct" + 0xf0 min 1 max 512 ; // 0x10428 (fft.c:151)
+		loop "fft_bit_reduct" + 0x120 min 1 max 512 ; // 0x10458 (fft.c:160)
+	loop "fft_bit_reduct" + 0x1ac min 2048 max 2048 ; // 0x104e4 (fft.c:186)
+loop "fft_bit_reduct" + 0x20 min 1024 max 1024 ; // 0x10358 (fft.c:118)
+	loop "fft_bit_reduct" + 0x30 min 1 max 1 ; // 0x10368 (fft.c:119)
+		loop "fft_bit_reduct" + 0x70 min 0 max 10 ; // 0x103a8 (fft.c:133)
+
+// Function fft_pin_down (fft.c:266)
+loop "fft_pin_down" + 0x28 min 1024 max 1024 ; // 0x10664 (fft.c:259)
+loop "fft_pin_down" + 0x48 min 1024 max 1024 ; // 0x10684 (fft.c:277)
+
+// Function fft_convert (fft.c:205)
+loop "fft_convert" + 0x8 min 13 max 13 ; // 0x10578 (fft.c:208)
+
+

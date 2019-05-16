@@ -1,0 +1,44 @@
+checksum "sha.elf" 0xb987ec58;
+
+// Low-level flow facts
+//multibranch "sha_wordcopy_fwd_aligned" + 0x14 to ?;	// 0x000108d8 (memhelper.c:36) switch-like branch in "sha_wordcopy_fwd_aligned"
+
+
+// Function main (sha.c:216)
+loop "main" + 0x6c min 16 max 16 ; // 0x10254 (sha.c:126)
+
+// Function sha_stream (sha.c:189)
+loop "sha_stream" + 0x14 min 5 max 5 ; // 0x107d8 (sha.c:134)
+	loop "sha_stream" + 0x40 min 0 max 8192 ; // 0x10804 (sha.c:138)
+
+// Function sha_final (sha.c:164)
+loop "sha_final" + 0x94 min 16 max 16 ; // 0x10770 (sha.c:101)
+loop "sha_final" + 0xfffffce8 min 64 max 64 ; // 0x103c4 (sha.c:59)
+loop "sha_final" + 0xfffffd00 min 16 max 16 ; // 0x103dc (sha.c:58)
+loop "sha_final" + 0x48 min 16 max 16 ; // 0x10724 (sha.c:101)
+
+// Function sha_update (sha.c:145)
+loop "sha_update" + 0x424 min 0 max 7 ; // 0x10a34 (memcpy.c:65)
+loop "sha_update" + 0x3e4 min 0 max 0 ; // 0x109f4 (memcpy.c:40)
+loop "sha_update" + 0x60 min 8 max 128 ; // 0x10670 (sha.c:152)
+	loop "sha_update" + 0x74 min 16 max 16 ; // 0x10684 (sha.c:101)
+
+// Function sha_glibc_memset (memset.c:27)
+loop "sha_glibc_memset" + 0xd4 min 0 max 0 ; // 0x10b34 (memset.c:78)
+loop "sha_glibc_memset" + 0xb4 min 0 max 0 ; // 0x10b14 (memset.c:78)
+loop "sha_glibc_memset" + 0x90 min 1 max 1 ; // 0x10af0 (memset.c:68)
+loop "sha_glibc_memset" + 0x48 min 1 max 1 ; // 0x10aa8 (memset.c:51)
+loop "sha_glibc_memset" + 0x24 min 3 max 3 ; // 0x10a84 (memset.c:42)
+
+// Function sha_transform (sha.c:53)
+loop "sha_transform" + 0x18 min 64 max 64 ; // 0x103c4 (sha.c:59)
+loop "sha_transform" + 0x30 min 16 max 16 ; // 0x103dc (sha.c:58)
+
+// Function sha_wordcopy_fwd_aligned (memhelper.c:31)
+loop "sha_wordcopy_fwd_aligned" + 0x5c min 1 max 2 ; // 0x10920 (memhelper.c:142)
+
+// Function sha_glibc_memcpy (memcpy.c:33)
+loop "sha_glibc_memcpy" + 0x74 min 0 max 7 ; // 0x10a34 (memcpy.c:65)
+loop "sha_glibc_memcpy" + 0x34 min 0 max 0 ; // 0x109f4 (memcpy.c:40)
+
+

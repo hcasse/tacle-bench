@@ -1,0 +1,17 @@
+checksum "cubic.elf" 0xb5cfe5e0;
+
+// Function cubic_main (cubic.c:92)
+loop "cubic_main" + 0x174 min 5 max 5 ; // 0x107cc (cubic.c:108)
+	loop "cubic_main" + 0x184 min 5 max 5 ; // 0x107dc (cubic.c:110)
+		loop "cubic_main" + 0x190 min 7 max 7 ; // 0x107e8 (cubic.c:112)
+			loop "cubic_main" + 0x1a8 min 5 max 5 ; // 0x10800 (cubic.c:113)
+
+// Function basicmath___ieee754_sqrtf (wcclibm.c:500)
+loop "basicmath___ieee754_sqrtf" + 0xa0 min 0 max 0 ; // 0x10b94 (wcclibm.c:519)
+loop "basicmath___ieee754_sqrtf" + 0x5c min 25 max 25 ; // 0x10b50 (wcclibm.c:535)
+
+// Function basicmath___ieee754_powf (wcclibm.c:157)
+loop "basicmath___ieee754_powf" + 0xfffff990 min 0 max 0 ; // 0x10b94 (wcclibm.c:519)
+loop "basicmath___ieee754_powf" + 0xfffff94c min 25 max 25 ; // 0x10b50 (wcclibm.c:535)
+
+

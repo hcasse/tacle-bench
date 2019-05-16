@@ -1,0 +1,33 @@
+checksum "fir2dim.elf" 0xc9ee6a9e;
+
+// Function fir2dim_init (fir2dim.c:68)
+loop "fir2dim_init" + 0x18 min 36 max 36 ; // 0x10334 (fir2dim.c:71)
+loop "fir2dim_init" + 0x34 min 64 max 64 ; // 0x10350 (fir2dim.c:76)
+loop "fir2dim_init" + 0x50 min 144 max 144 ; // 0x1036c (fir2dim.c:81)
+loop "fir2dim_init" + 0x6c min 64 max 64 ; // 0x10388 (fir2dim.c:86)
+
+// Function fir2dim_main (fir2dim.c:145)
+loop "fir2dim_main" + 0x60 min 4 max 4 ; // 0x10518 (fir2dim.c:166)
+	loop "fir2dim_main" + 0x6c min 4 max 4 ; // 0x10524 (fir2dim.c:170)
+		loop "fir2dim_main" + 0xa4 min 3 max 3 ; // 0x1055c (fir2dim.c:174)
+		loop "fir2dim_main" + 0xc0 min 3 max 3 ; // 0x10578 (fir2dim.c:178)
+loop "fir2dim_main" + 0xffffff28 min 4 max 4 ; // 0x103e0 (fir2dim.c:108)
+	loop "fir2dim_main" + 0xffffff40 min 4 max 4 ; // 0x103f8 (fir2dim.c:107)
+loop "fir2dim_main" + 0xffffff68 min 9 max 9 ; // 0x10420 (fir2dim.c:115)
+loop "fir2dim_main" + 0xffffff84 min 6 max 6 ; // 0x1043c (fir2dim.c:119)
+loop "fir2dim_main" + 0xffffff9c min 4 max 4 ; // 0x10454 (fir2dim.c:123)
+	loop "fir2dim_main" + 0xffffffac min 4 max 4 ; // 0x10464 (fir2dim.c:126)
+loop "fir2dim_main" + 0xffffffdc min 6 max 6 ; // 0x10494 (fir2dim.c:132)
+loop "fir2dim_main" + 0xfffffff0 min 16 max 16 ; // 0x104a8 (fir2dim.c:136)
+
+// Function fir2dim_pin_down (fir2dim.c:101)
+loop "fir2dim_pin_down" + 0xc min 4 max 4 ; // 0x103e0 (fir2dim.c:108)
+	loop "fir2dim_pin_down" + 0x24 min 4 max 4 ; // 0x103f8 (fir2dim.c:107)
+loop "fir2dim_pin_down" + 0x4c min 9 max 9 ; // 0x10420 (fir2dim.c:115)
+loop "fir2dim_pin_down" + 0x68 min 6 max 6 ; // 0x1043c (fir2dim.c:119)
+loop "fir2dim_pin_down" + 0x80 min 4 max 4 ; // 0x10454 (fir2dim.c:123)
+	loop "fir2dim_pin_down" + 0x90 min 4 max 4 ; // 0x10464 (fir2dim.c:126)
+loop "fir2dim_pin_down" + 0xc0 min 6 max 6 ; // 0x10494 (fir2dim.c:132)
+loop "fir2dim_pin_down" + 0xd4 min 16 max 16 ; // 0x104a8 (fir2dim.c:136)
+
+

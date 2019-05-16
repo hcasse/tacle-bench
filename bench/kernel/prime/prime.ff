@@ -1,0 +1,6 @@
+nocall "raise";checksum "prime.elf" 0x7121d739;
+
+// Function prime_prime.part.0 (prime.c:104)
+loop "prime_prime.part.0" + 0x28 min 2 max 16 ; // 0x10390 (prime.c:104)
+
+

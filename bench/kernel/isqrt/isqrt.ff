@@ -1,12 +1,12 @@
-checksum "isqrt.elf" 0x424b59ef;
+checksum "isqrt.elf" 0xecf61f1f;
 
 // Function isqrt_main (isqrt.c:137)
-loop "isqrt_main" + 0x18 min 1000 max 1000; // 0x103c8 (isqrt.c:141)
+loop "isqrt_main" + 0x30 min 1000 max 1000 ; // 0x10430 (isqrt.c:141)
 
 // Function isqrt_usqrt (isqrt.c:114)
-loop "isqrt_usqrt" + 0xa min 32 max 32; // 0x1037a (isqrt.c:123)
+loop "isqrt_usqrt" + 0x18 min 32 max 32 ; // 0x103b8 (isqrt.c:123)
 
 // Function basicmath_memcpy (basicmath_libc.c:30)
-loop "basicmath_memcpy" + 0x8 min 4 max 4; // 0x11204 (basicmath_libc.c:31)
+loop "basicmath_memcpy" + 0x10 min 4 max 4 ; // 0x114a8 (basicmath_libc.c:31)
 
 

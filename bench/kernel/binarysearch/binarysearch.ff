@@ -1,6 +1,9 @@
-//checksum "binarysearch.elf" 0xff5f52c3;
+checksum "binarysearch.elf" 0x781fcc1e;
 
-// Function binarysearch_main (binarysearch.c:145)
-loop "binarysearch_main" + 0x20 min 1 max 4 ; // 0x1048c (binarysearch.c:121)
+// Function main (binarysearch.c:151)
+loop "main" + 0x38 min 1 max 4 ; // 0x10220 (binarysearch.c:121)
+
+// Function binarysearch_init (binarysearch.c:88)
+loop "binarysearch_init" + 0x38 min 15 max 15 ; // 0x10418 (binarysearch.c:82)
 
 

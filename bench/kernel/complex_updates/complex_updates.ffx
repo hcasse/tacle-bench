@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="complex_updates_main" executed="true" extern="false">
+        <loop loopId="4" line="118" source="complex_updates.c" exact="true" maxcount="16" totalcount="16">
+        </loop>
+    </function>
+</flowfacts>
+

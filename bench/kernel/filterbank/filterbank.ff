@@ -1,0 +1,21 @@
+checksum "filterbank.elf" 0xfd0b776;
+
+// Function filterbank_main (filterbank.c:70)
+loop "filterbank_main" + 0x18 min 256 max 256 ; // 0x104f0 (filterbank.c:80)
+loop "filterbank_main" + 0x48 min 32 max 32 ; // 0x10520 (filterbank.c:79)
+	loop "filterbank_main" + 0x5c min 8 max 8 ; // 0x10534 (filterbank.c:87)
+loop "filterbank_main" + 0xcc min 2 max 2 ; // 0x105a4 (filterbank.c:93)
+
+// Function filterbank_core (filterbank.c:106)
+loop "filterbank_core" + 0x18 min 256 max 256 ; // 0x1034c (filterbank.c:111)
+loop "filterbank_core" + 0x5c min 8 max 8 ; // 0x10390 (filterbank.c:123)
+	loop "filterbank_core" + 0x6c min 256 max 256 ; // 0x103a0 (filterbank.c:123)
+		loop "filterbank_core" + 0x80 min 1 max 32 ; // 0x103b4 (filterbank.c:125)
+	loop "filterbank_core" + 0xc8 min 32 max 32 ; // 0x103fc (filterbank.c:132)
+	loop "filterbank_core" + 0xe0 min 256 max 256 ; // 0x10414 (filterbank.c:137)
+	loop "filterbank_core" + 0xec min 32 max 32 ; // 0x10420 (filterbank.c:140)
+	loop "filterbank_core" + 0x110 min 256 max 256 ; // 0x10444 (filterbank.c:145)
+		loop "filterbank_core" + 0x124 min 1 max 32 ; // 0x10458 (filterbank.c:147)
+	loop "filterbank_core" + 0x168 min 256 max 256 ; // 0x1049c (filterbank.c:155)
+
+
