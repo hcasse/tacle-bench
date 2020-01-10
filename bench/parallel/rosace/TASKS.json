@@ -1,0 +1,17 @@
+{
+	"name": "rosace",
+	"execs": [
+		{ "name": "thread1", "path": "thread1/thread1.elf" },
+		{ "name": "thread2", "path": "thread2/thread2.elf" },
+		{ "name": "thread3", "path": "thread3/thread3.elf" },
+		{ "name": "thread4", "path": "thread4/thread4.elf" },
+		{ "name": "thread5", "path": "thread5/thread5.elf" }
+	],
+	"tasks": [
+		{ "name": "ros_th1_main", "exec": "thread1" },
+		{ "name": "ros_th2_main", "exec": "thread2" },
+		{ "name": "ros_th3_main", "exec": "thread3" },
+		{ "name": "ros_th4_main", "exec": "thread4" },
+		{ "name": "ros_th5_main", "exec": "thread5" }
+	]
+}
