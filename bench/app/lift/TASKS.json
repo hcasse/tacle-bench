@@ -1,0 +1,9 @@
+{
+	"name": "lift",
+	"execs": [
+		{ "name": "lift", "path": "lift.elf" }
+	],
+	"tasks": [
+		{ "name": "main" }
+	]
+}
