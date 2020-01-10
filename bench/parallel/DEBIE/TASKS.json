@@ -1,0 +1,19 @@
+{
+	"name": "debie",
+	"execs": [
+		{
+			"name": "debie",
+			"path": "code/arch/mpc5554/debie1.elf"
+		},
+	],
+	"tasks": [
+		{ "name": "InitHealthMonitoring" },
+		{ "name": "HandleHealthMonitoring" },
+		{ "name": "InitHitTriggerTask" },
+		{ "name": "HandleHitTrigger" },
+		{ "name": "InitAcquisitionTask" },
+		{ "name": "HandleAcquisition" },
+		{ "name": "InitTelecommandTask" },
+		{ "name": "HandleTelecommand" }
+	]
+}

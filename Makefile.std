@@ -6,7 +6,7 @@ LD_FLAGS = $(CONF_LDFLAGS)
 
 all: $(notdir $(CURDIR)).elf
 
-%.elf: %.c *.c
+%.elf: %.c *.c $(ADD_SOURCES)
 	$(CC) $(CFLAGS) $^ -o $@ $(LD_FLAGS)
 
 
