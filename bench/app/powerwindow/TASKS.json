@@ -1,0 +1,9 @@
+{
+	"name": "powerwindow",
+	"execs": [
+		{ "name": "powerwindow", "path": "powerwindow.elf" }
+	],
+	"tasks": [
+		{ "name": "powerwindow_main" }
+	]
+}
