@@ -3,17 +3,17 @@
 	"execs": [
 		{
 			"name": "debie",
-			"path": "code/arch/mpc5554/debie1.elf"
-		},
+			"path": "debie.elf"
+		}
 	],
 	"tasks": [
-		{ "name": "InitHealthMonitoring" },
-		{ "name": "HandleHealthMonitoring" },
-		{ "name": "InitHitTriggerTask" },
-		{ "name": "HandleHitTrigger" },
-		{ "name": "InitAcquisitionTask" },
-		{ "name": "HandleAcquisition" },
-		{ "name": "InitTelecommandTask" },
-		{ "name": "HandleTelecommand" }
+		{ "name": "InitHealthMonitoring","exec":"debie" },
+		{ "name": "HandleHealthMonitoring","exec":"debie" },
+		{ "name": "InitHitTriggerTask","exec":"debie" },
+		{ "name": "HandleHitTrigger","exec":"debie" },
+		{ "name": "InitAcquisitionTask","exec":"debie" },
+		{ "name": "HandleAcquisition","exec":"debie" },
+		{ "name": "InitTelecommandTask","exec":"debie" },
+		{ "name": "HandleTelecommand","exec":"debie" }
 	]
 }

@@ -18,7 +18,7 @@
 		{ "name": "test_ppm_task",					"freq": 40,	"exec": "fbw" },
 		{ "name": "__vector_5",						"freq": 40,	"exec": "fbw" },
 		{ "name": "__vector_6",						"freq": 20,	"exec": "fbw" },
-		{ "name": "__vector_10",					"freq": 40,	"exec": "fbw" }
+		{ "name": "__vector_10",					"freq": 40,	"exec": "fbw" },
 		{ "name": "altitude_control_task",			"freq": 4,	"exec": "autopilot" },
 		{ "name": "climb_control_task",				"freq": 4,	"exec": "autopilot"  },
 		{ "name": "link_fbw_send",					"freq": 20,	"exec": "autopilot"  },
