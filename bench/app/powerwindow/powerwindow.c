@@ -286,6 +286,7 @@ void powerwindow_Booleaninputarray_initialize(powerwindow_boolean_T* arrayA, pow
 
     register int i;
 //    _Pragma( "loopbound min powerwindow_input_length max powerwindow_input_length" )
+    _Pragma( "loopbound min 977 max 977" )
     for ( i = 0; i < powerwindow_input_length; i++ )
     	arrayA[i] = arrayB[i];
 }
@@ -294,7 +295,8 @@ void powerwindow_Uint8inputarray_initialize(powerwindow_uint8_T* arrayA, powerwi
 {
 
     register int i;
-//    _Pragma( "loopbound min powerwindow_input_length max powerwindow_input_length" )
+//    _Pragma( "loopbound min powerwindow_input_length max powerwindow_input_length")
+    _Pragma( "loopbound min 977 max 977" )
     for ( i = 0; i < powerwindow_input_length; i++ )
     	arrayA[i] = arrayB[i];
 }
