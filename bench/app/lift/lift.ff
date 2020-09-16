@@ -1,0 +1,17 @@
+checksum "lift.elf" 0xd9f0b731;
+
+// Function lift_main (lift.c:109)
+loop "lift_main" + 0x34 min 1001 max 1001 ; // 0x10470 (lift.c:114)
+
+// Function lift_ctrl_set_vals (liftlibio.c:27)
+loop "lift_ctrl_set_vals" + 0x18 min 4 max 4 ; // 0x10eb0 (liftlibio.c:32)
+loop "lift_ctrl_set_vals" + 0x4c min 16 max 16 ; // 0x10ee4 (liftlibio.c:38)
+
+// Function lift_ctrl_get_vals (liftlibio.c:46)
+loop "lift_ctrl_get_vals" + 0x50 min 10 max 10 ; // 0x10f88 (liftlibio.c:57)
+
+// Function lift_check_level (liftlibcontrol.c:119)
+loop "lift_check_level" + 0xbc min 14 max 14 ; // 0x106d0 (liftlibcontrol.c:132)
+loop "lift_check_level" + 0x74 min 14 max 14 ; // 0x10688 (liftlibcontrol.c:125)
+
+

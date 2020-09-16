@@ -1,0 +1,14 @@
+checksum "dijkstra.elf" 0x81b52d91;
+
+// Function dijkstra_main (dijkstra.c:176)
+loop "dijkstra_main" + 0x50 min 20 max 20 ; // 0x10704 (dijkstra.c:182)
+
+// Function dijkstra_find (dijkstra.c:134)
+loop "dijkstra_find" + 0x20 min 100 max 100 ; // 0x105a4 (dijkstra.c:142)
+loop "dijkstra_find" + 0x68 min 618 max 928 ; // 0x105ec (dijkstra.c:130)
+	loop "dijkstra_find" + 0xc8 min 100 max 100 ; // 0x1064c (dijkstra.c:161)
+
+// Function dijkstra_enqueue (dijkstra.c:93)
+loop "dijkstra_enqueue" + 0x64 min 0 max 313 ; // 0x104b8 (dijkstra.c:109)
+
+

@@ -1,0 +1,7 @@
+checksum "fac.elf" 0x4af1f9d7;
+
+// Function fac_main (fac.c:80)
+loop "fac_main" + 0x34 min 6 max 6 ; // 0x1041c (fac.c:84)
+	loop "fac_main" + 0x50 min 1 max 6 ; // 0x10438 (fac.c:84)
+
+

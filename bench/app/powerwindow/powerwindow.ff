@@ -1,0 +1,35 @@
+checksum "powerwindow.elf" 0x87f754f7;
+
+// Function powerwindow_main (powerwindow.c:538)
+loop "powerwindow_main" + 0x264 min 977 max 977 ; // 0x10e70 (powerwindow.c:556)
+
+// Function powerwindow_input_initialize_DRV (powerwindow.c:228)
+loop "powerwindow_input_initialize_DRV" + 0x28 min 977 max 977 ; // 0x105bc (powerwindow.c:290)
+loop "powerwindow_input_initialize_DRV" + 0x54 min 977 max 977 ; // 0x105e8 (powerwindow.c:290)
+loop "powerwindow_input_initialize_DRV" + 0x80 min 977 max 977 ; // 0x10614 (powerwindow.c:290)
+loop "powerwindow_input_initialize_DRV" + 0xac min 977 max 977 ; // 0x10640 (powerwindow.c:290)
+loop "powerwindow_input_initialize_DRV" + 0xd8 min 977 max 977 ; // 0x1066c (powerwindow.c:290)
+loop "powerwindow_input_initialize_DRV" + 0x108 min 977 max 977 ; // 0x1069c (powerwindow.c:290)
+loop "powerwindow_input_initialize_DRV" + 0x128 min 977 max 977 ; // 0x106bc (powerwindow.c:290)
+loop "powerwindow_input_initialize_DRV" + 0x154 min 977 max 977 ; // 0x106e8 (powerwindow.c:290)
+loop "powerwindow_input_initialize_DRV" + 0x180 min 977 max 977 ; // 0x10714 (powerwindow.c:290)
+
+// Function powerwindow_input_initialize_PSG_Front (powerwindow.c:246)
+loop "powerwindow_input_initialize_PSG_Front" + 0x24 min 977 max 977 ; // 0x10794 (powerwindow.c:290)
+loop "powerwindow_input_initialize_PSG_Front" + 0x50 min 977 max 977 ; // 0x107c0 (powerwindow.c:290)
+loop "powerwindow_input_initialize_PSG_Front" + 0x7c min 977 max 977 ; // 0x107ec (powerwindow.c:290)
+loop "powerwindow_input_initialize_PSG_Front" + 0xa8 min 977 max 977 ; // 0x10818 (powerwindow.c:299)
+
+// Function powerwindow_input_initialize_PSG_BackL (powerwindow.c:260)
+loop "powerwindow_input_initialize_PSG_BackL" + 0x24 min 977 max 977 ; // 0x10874 (powerwindow.c:290)
+loop "powerwindow_input_initialize_PSG_BackL" + 0x50 min 977 max 977 ; // 0x108a0 (powerwindow.c:290)
+loop "powerwindow_input_initialize_PSG_BackL" + 0x7c min 977 max 977 ; // 0x108cc (powerwindow.c:290)
+loop "powerwindow_input_initialize_PSG_BackL" + 0xa8 min 977 max 977 ; // 0x108f8 (powerwindow.c:299)
+
+// Function powerwindow_input_initialize_PSG_BackR (powerwindow.c:273)
+loop "powerwindow_input_initialize_PSG_BackR" + 0x24 min 977 max 977 ; // 0x10954 (powerwindow.c:290)
+loop "powerwindow_input_initialize_PSG_BackR" + 0x50 min 977 max 977 ; // 0x10980 (powerwindow.c:290)
+loop "powerwindow_input_initialize_PSG_BackR" + 0x7c min 977 max 977 ; // 0x109ac (powerwindow.c:290)
+loop "powerwindow_input_initialize_PSG_BackR" + 0xa8 min 977 max 977 ; // 0x109d8 (powerwindow.c:299)
+
+

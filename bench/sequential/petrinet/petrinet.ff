@@ -1,0 +1,6 @@
+checksum "petrinet.elf" 0x22b44f41;
+
+// Function petrinet_main (petrinet.c:57)
+loop "petrinet_main" + 0x20 min 2 max 2 ; // 0x10314 (petrinet.c:74)
+
+

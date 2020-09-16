@@ -1,0 +1,29 @@
+checksum "fmref.elf" 0xfa5aaac2;
+
+// Function fmref_main (fmref.c:87)
+loop "fmref_main" + 0xc0 min 64 max 64 ; // 0x10934 (fmref.c:108)
+loop "fmref_main" + 0x118 min 2 max 2 ; // 0x1098c (fmref.c:116)
+
+// Function fmref_init_lpf_data (fmref.c:181)
+loop "fmref_init_lpf_data" + 0x84 min 64 max 64 ; // 0x10530 (fmref.c:187)
+
+// Function fmref_init_equalizer (fmref.c:224)
+loop "fmref_init_equalizer" + 0x1c min 11 max 11 ; // 0x106e8 (fmref.c:232)
+loop "fmref_init_equalizer" + 0x48 min 11 max 11 ; // 0x10714 (fmref.c:237)
+loop "fmref_init_equalizer" + 0x74 min 10 max 10 ; // 0x10740 (fmref.c:242)
+
+// Function fmref_get_floats (fmref.c:135)
+loop "fmref_get_floats" + 0x74 min 200 max 200 ; // 0x10468 (fmref.c:168)
+loop "fmref_get_floats" + 0x28 min 0 max 60 ; // 0x1041c (fmref.c:138)
+
+// Function fmref_run_lpf (fmref.c:201)
+loop "fmref_run_lpf" + 0x28 min 64 max 64 ; // 0x105f8 (fmref.c:202)
+
+// Function fmref_run_equalizer (fmref.c:248)
+loop "fmref_run_equalizer" + 0x30 min 11 max 11 ; // 0x107a8 (fmref.c:261)
+loop "fmref_run_equalizer" + 0x94 min 10 max 10 ; // 0x1080c (fmref.c:269)
+
+// Function fmref_fb_ensure_writable.part.0 (fmref.c:135)
+loop "fmref_fb_ensure_writable.part.0" + 0x2c min 0 max 60 ; // 0x10324 (fmref.c:138)
+
+

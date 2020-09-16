@@ -1,0 +1,49 @@
+checksum "audiobeam.elf" 0xd8d073be;
+
+// Function audiobeam_main (audiobeam.c:570)
+loop "audiobeam_main" + 0xffffff5c min 15 max 15 ; // 0x10ddc (audiobeam.c:311)
+
+// Function audiobeam_init_delays (audiobeam.c:259)
+loop "audiobeam_init_delays" + 0x40 min 1 max 1 ; // 0x1069c (audiobeam.c:272)
+
+// Function audiobeam_calc_distances (audiobeam.c:283)
+loop "audiobeam_calc_distances" + 0x1c min 15 max 15 ; // 0x106d8 (audiobeam.c:293)
+
+// Function audiobeam_adjust_delays (audiobeam.c:316)
+loop "audiobeam_adjust_delays" + 0x2c min 15 max 15 ; // 0x10798 (audiobeam.c:322)
+
+// Function audiobeam_find_max_in_arr (audiobeam.c:175)
+loop "audiobeam_find_max_in_arr" + 0x14 min 15 max 15 ; // 0x10508 (audiobeam.c:176)
+
+// Function audiobeam_init_data_queue (audiobeam.c:231)
+loop "audiobeam_init_data_queue" + 0x40 min 15 max 15 ; // 0x10608 (audiobeam.c:242)
+	loop "audiobeam_init_data_queue" + 0x60 min 15 max 15 ; // 0x10628 (audiobeam.c:246)
+
+// Function audiobeam_calc_beamforming_result (audiobeam.c:504)
+loop "audiobeam_calc_beamforming_result" + 0x64 min 0 max 0 ; // 0x10d00 (audiobeam.c:378)
+	loop "audiobeam_calc_beamforming_result" + 0x78 min 0 max 0 ; // 0x10d14 (audiobeam.c:379)
+
+// Function audiobeam___ieee754_sqrtf (audiobeamlibm.c:370)
+loop "audiobeam___ieee754_sqrtf" + 0xa0 min 0 max 0 ; // 0x1174c (audiobeamlibm.c:384)
+loop "audiobeam___ieee754_sqrtf" + 0x5c min 0 max 0 ; // 0x11708 (audiobeamlibm.c:399)
+
+// Function audiobeam_find_min_in_arr (audiobeam.c:190)
+loop "audiobeam_find_min_in_arr" + 0x2c min 15 max 15 ; // 0x10560 (audiobeam.c:190)
+
+// Function audiobeam_calc_weights_left_only (audiobeam.c:355)
+loop "audiobeam_calc_weights_left_only" + 0x48 min 15 max 15 ; // 0x10900 (audiobeam.c:364)
+
+// Function audiobeam_process_signal (audiobeam.c:443)
+loop "audiobeam_process_signal" + 0x144 min 371 max 371 ; // 0x10b60 (audiobeam.c:467)
+	loop "audiobeam_process_signal" + 0x15c min 15 max 15 ; // 0x10b78 (audiobeam.c:163)
+	loop "audiobeam_process_signal" + 0x1b8 min 1 max 1 ; // 0x10bd4 (audiobeam.c:475)
+loop "audiobeam_process_signal" + 0x84 min 13 max 13 ; // 0x10aa0 (audiobeam.c:459)
+	loop "audiobeam_process_signal" + 0x90 min 15 max 15 ; // 0x10aac (audiobeam.c:163)
+
+// Function audiobeam_preprocess_delays (audiobeam.c:144)
+loop "audiobeam_preprocess_delays" + 0x10 min 15 max 15 ; // 0x10450 (audiobeam.c:149)
+
+// Function audiobeam_do_beamforming (audiobeam.c:392)
+loop "audiobeam_do_beamforming" + 0x24 min 15 max 15; // 0x109ac (audiobeam.c:409)
+
+

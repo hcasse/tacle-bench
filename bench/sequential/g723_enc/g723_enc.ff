@@ -1,0 +1,23 @@
+checksum "g723_enc.elf" 0xd5e8a7f;
+
+// Function g723_enc_main (g723_enc.c:843)
+loop "g723_enc_main" + 0x28 min 256 max 256 ; // 0x11040 (g723_enc.c:859)
+loop "g723_enc_main" + 0x58 min 0 max 0 ; // 0x11070 (g723_enc.c:867)
+
+// Function g723_enc_predictor_zero (g723_enc.c:279)
+loop "g723_enc_predictor_zero" + 0x24 min 5 max 5 ; // 0x104a8 (g723_enc.c:282)
+
+// Function g723_enc_quantize (g723_enc.c:347)
+loop "g723_enc_quantize" + 0x28 min 3 max 15 ; // 0x10578 (g723_enc.c:254)
+loop "g723_enc_quantize" + 0x9c min 3 max 15 ; // 0x105ec (g723_enc.c:254)
+
+// Function g723_enc_update (g723_enc.c:433)
+loop "g723_enc_update" + 0x398 min 3 max 15 ; // 0x10a64 (g723_enc.c:254)
+loop "g723_enc_update" + 0x4cc min 3 max 15 ; // 0x10b98 (g723_enc.c:254)
+loop "g723_enc_update" + 0x1dc min 3 max 15 ; // 0x108a8 (g723_enc.c:254)
+loop "g723_enc_update" + 0x11c min 6 max 6 ; // 0x107e8 (g723_enc.c:543)
+
+// Function g723_enc_fmult (g723_enc.c:208)
+loop "g723_enc_fmult" + 0x28 min 3 max 15 ; // 0x10360 (g723_enc.c:254)
+
+
