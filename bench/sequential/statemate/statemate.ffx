@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowfacts
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+
+	<function  label="statemate_main"> <!-- 0x00012914 (statemate.c:1268) -->
+		<loop label="statemate_main" offset="0xfffffbe8" mincount="100" maxcount="100"> <!-- 0x000124fc (statemate.c:1009) -->
+		</loop>
+	</function>
+
+</flowfacts>

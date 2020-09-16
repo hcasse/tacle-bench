@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowfacts
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+
+	<!-- Low-level flow facts-->	<!-- switch-like branch (00010998) in "gsm_dec_RPE_grid_positioning" -->
+	<multibranch label="gsm_dec_RPE_grid_positioning" offset="0x8">
+	</multibranch>
+
+	<function  label="gsm_dec_main"> <!-- 0x000115b4 (gsm_dec.c:734) -->
+		<loop label="gsm_dec_main" offset="0x4c" maxcount="4"> <!-- 0x00011600 (gsm_dec.c:743) -->
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_Decoder"> <!-- 0x00010ffc (gsm_dec.c:266) -->
+		<loop label="gsm_dec_Decoder" offset="0x60" mincount="4" maxcount="4"> <!-- 0x0001105c (gsm_dec.c:274) -->
+			<loop label="gsm_dec_Decoder" offset="0x9c" mincount="40" maxcount="40"> <!-- 0x00011098 (gsm_dec.c:279) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_Long_Term_Synthesis_Filtering"> <!-- 0x000108d4 (gsm_dec.c:304) -->
+		<loop label="gsm_dec_Long_Term_Synthesis_Filtering" offset="0x60" mincount="40" maxcount="40"> <!-- 0x00010934 (gsm_dec.c:317) -->
+		</loop>
+		<loop label="gsm_dec_Long_Term_Synthesis_Filtering" offset="0xa4" mincount="120" maxcount="120"> <!-- 0x00010978 (gsm_dec.c:328) -->
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_RPE_Decoding"> <!-- 0x00010b44 (gsm_dec.c:442) -->
+		<loop label="gsm_dec_RPE_Decoding" offset="0x5c" mincount="1" maxcount="3"> <!-- 0x00010ba0 (gsm_dec.c:451) -->
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_Short_Term_Synthesis_Filter"> <!-- 0x00010ec0 (gsm_dec.c:547) -->
+		<loop label="gsm_dec_Short_Term_Synthesis_Filter" offset="0x84" mincount="8" maxcount="8"> <!-- 0x00010f44 (gsm_dec.c:488) -->
+		</loop>
+		<loop label="gsm_dec_Short_Term_Synthesis_Filter" offset="0x100" mincount="8" maxcount="8"> <!-- 0x00010fc0 (gsm_dec.c:497) -->
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_Postprocessing"> <!-- 0x00010c78 (gsm_dec.c:469) -->
+		<loop label="gsm_dec_Postprocessing" offset="0x4c" mincount="159" maxcount="159"> <!-- 0x00010cc4 (gsm_dec.c:475) -->
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_RPE_grid_positioning"> <!-- 0x00010990 (gsm_dec.c:355) -->
+		<loop label="gsm_dec_RPE_grid_positioning" offset="0x64" mincount="12" maxcount="12"> <!-- 0x000109f4 (gsm_dec.c:373) -->
+		</loop>
+		<loop label="gsm_dec_RPE_grid_positioning" offset="0xb0" mincount="0" maxcount="2"> <!-- 0x00010a40 (gsm_dec.c:380) -->
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_APCM_inverse_quantization"> <!-- 0x00010a60 (gsm_dec.c:119) -->
+		<loop label="gsm_dec_APCM_inverse_quantization" offset="0x68" mincount="13" maxcount="13"> <!-- 0x00010ac8 (gsm_dec.c:407) -->
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_Coefficients_0_12"> <!-- 0x000107bc (gsm_dec.c:208) -->
+		<loop label="gsm_dec_Coefficients_0_12" offset="0x10" mincount="8" maxcount="8"> <!-- 0x000107cc (gsm_dec.c:214) -->
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_LARp_to_rp"> <!-- 0x000107fc (gsm_dec.c:227) -->
+		<loop label="gsm_dec_LARp_to_rp" offset="0x64" mincount="8" maxcount="8"> <!-- 0x00010860 (gsm_dec.c:244) -->
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_Short_term_synthesis_filtering"> <!-- 0x00010d68 (gsm_dec.c:512) -->
+		<loop label="gsm_dec_Short_term_synthesis_filtering" offset="0x48" mincount="12" maxcount="118"> <!-- 0x00010db0 (gsm_dec.c:513) -->
+			<loop label="gsm_dec_Short_term_synthesis_filtering" offset="0xa8" mincount="8" maxcount="8"> <!-- 0x00010e10 (gsm_dec.c:519) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="gsm_dec_Coefficients_27_39"> <!-- 0x00010e80 (gsm_dec.c:572) -->
+		<loop label="gsm_dec_Coefficients_27_39" offset="0x10" mincount="8" maxcount="8"> <!-- 0x00010e90 (gsm_dec.c:578) -->
+		</loop>
+	</function>
+
+</flowfacts>

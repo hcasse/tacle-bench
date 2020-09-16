@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowfacts
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+
+	<function  label="adpcm_enc_encode"> <!-- 0x00010588 (adpcm_enc.c:269) -->
+		<loop label="adpcm_enc_encode" offset="0x44" mincount="10" maxcount="10"> <!-- 0x000105cc (adpcm_enc.c:286) -->
+		</loop>
+		<loop label="adpcm_enc_encode" offset="0xa0" mincount="22" maxcount="22"> <!-- 0x00010628 (adpcm_enc.c:299) -->
+		</loop>
+		<loop label="adpcm_enc_encode" offset="0x108" mincount="5" maxcount="5"> <!-- 0x00010690 (adpcm_enc.c:436) -->
+		</loop>
+		<loop label="adpcm_enc_encode" offset="0x1e0" mincount="1" maxcount="30"> <!-- 0x00010768 (adpcm_enc.c:473) -->
+		</loop>
+		<loop label="adpcm_enc_encode" offset="0x39c" mincount="5" maxcount="5"> <!-- 0x00010924 (adpcm_enc.c:436) -->
+		</loop>
+	</function>
+
+	<function  label="adpcm_enc_upzero"> <!-- 0x00010500 (adpcm_enc.c:539) -->
+		<loop label="adpcm_enc_upzero" offset="0x58" mincount="6" maxcount="6"> <!-- 0x00010558 (adpcm_enc.c:548) -->
+		</loop>
+		<loop label="adpcm_enc_upzero" offset="0x14" mincount="6" maxcount="6"> <!-- 0x00010514 (adpcm_enc.c:542) -->
+		</loop>
+	</function>
+
+</flowfacts>

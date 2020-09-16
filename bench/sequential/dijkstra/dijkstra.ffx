@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowfacts
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+
+	<function  label="dijkstra_main"> <!-- 0x000106b4 (dijkstra.c:176) -->
+		<loop label="dijkstra_main" offset="0x50" maxcount="NOCOMP"> <!-- 0x00010704 (dijkstra.c:182) -->
+		</loop>
+	</function>
+
+	<function  label="dijkstra_find"> <!-- 0x00010584 (dijkstra.c:134) -->
+		<loop label="dijkstra_find" offset="0x20" maxcount="NOCOMP"> <!-- 0x000105a4 (dijkstra.c:142) -->
+		</loop>
+		<loop label="dijkstra_find" offset="0x68" maxcount="NOCOMP"> <!-- 0x000105ec (dijkstra.c:130) -->
+			<loop label="dijkstra_find" offset="0xc8" maxcount="NOCOMP"> <!-- 0x0001064c (dijkstra.c:161) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="dijkstra_enqueue"> <!-- 0x00010454 (dijkstra.c:93) -->
+		<loop label="dijkstra_enqueue" offset="0x64" maxcount="NOCOMP"> <!-- 0x000104b8 (dijkstra.c:109) -->
+		</loop>
+	</function>
+
+</flowfacts>

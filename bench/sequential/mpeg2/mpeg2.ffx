@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowfacts
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+
+	<function  label="mpeg2_motion_estimation"> <!-- 0x000140a4 (mpeg2.c:11475) -->
+		<loop label="mpeg2_motion_estimation" offset="0x4c" mincount="16" maxcount="16"> <!-- 0x000140f0 (mpeg2.c:11478) -->
+			<loop label="mpeg2_motion_estimation" offset="0xc8" mincount="22" maxcount="22"> <!-- 0x0001416c (mpeg2.c:11479) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="mpeg2_field_ME"> <!-- 0x00013204 (mpeg2.c:11886) -->
+		<loop label="mpeg2_field_ME" offset="0x64" mincount="16" maxcount="16"> <!-- 0x00013268 (mpeg2.c:11886) -->
+			<loop label="mpeg2_field_ME" offset="0x6c" mincount="16" maxcount="16"> <!-- 0x00013270 (mpeg2.c:13183) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="mpeg2_frame_ME"> <!-- 0x000120a4 (mpeg2.c:11510) -->
+		<loop label="mpeg2_frame_ME" offset="0x40" mincount="16" maxcount="16"> <!-- 0x000120e4 (mpeg2.c:11512) -->
+			<loop label="mpeg2_frame_ME" offset="0x48" mincount="16" maxcount="16"> <!-- 0x000120ec (mpeg2.c:13183) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="mpeg2_bdist1"> <!-- 0x000114f4 (mpeg2.c:13064) -->
+		<loop label="mpeg2_bdist1" offset="0x74" mincount="8" maxcount="16"> <!-- 0x00011568 (mpeg2.c:13081) -->
+			<loop label="mpeg2_bdist1" offset="0x94" mincount="16" maxcount="16"> <!-- 0x00011588 (mpeg2.c:13087) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="mpeg2_dist2"> <!-- 0x0001131c (mpeg2.c:12977) -->
+		<loop label="mpeg2_dist2" offset="0x178" mincount="8" maxcount="16"> <!-- 0x00011494 (mpeg2.c:13032) -->
+			<loop label="mpeg2_dist2" offset="0x184" mincount="16" maxcount="16"> <!-- 0x000114a0 (mpeg2.c:13038) -->
+			</loop>
+		</loop>
+		<loop label="mpeg2_dist2" offset="0x11c" mincount="8" maxcount="16"> <!-- 0x00011438 (mpeg2.c:13018) -->
+			<loop label="mpeg2_dist2" offset="0x128" mincount="16" maxcount="16"> <!-- 0x00011444 (mpeg2.c:13022) -->
+			</loop>
+		</loop>
+		<loop label="mpeg2_dist2" offset="0x94" mincount="8" maxcount="16"> <!-- 0x000113b0 (mpeg2.c:13003) -->
+			<loop label="mpeg2_dist2" offset="0xa0" mincount="16" maxcount="16"> <!-- 0x000113bc (mpeg2.c:13007) -->
+			</loop>
+		</loop>
+		<loop label="mpeg2_dist2" offset="0x30" mincount="8" maxcount="16"> <!-- 0x0001134c (mpeg2.c:12989) -->
+			<loop label="mpeg2_dist2" offset="0x38" mincount="16" maxcount="16"> <!-- 0x00011354 (mpeg2.c:12993) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="mpeg2_bdist2"> <!-- 0x00011680 (mpeg2.c:13122) -->
+		<loop label="mpeg2_bdist2" offset="0x74" mincount="8" maxcount="16"> <!-- 0x000116f4 (mpeg2.c:13139) -->
+			<loop label="mpeg2_bdist2" offset="0x98" mincount="16" maxcount="16"> <!-- 0x00011718 (mpeg2.c:13145) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="mpeg2_dpfield_estimate"> <!-- 0x00011e24 (mpeg2.c:12604) -->
+		<loop label="mpeg2_dpfield_estimate" offset="0xb4" mincount="3" maxcount="3"> <!-- 0x00011ed8 (mpeg2.c:12655) -->
+			<loop label="mpeg2_dpfield_estimate" offset="0xd4" mincount="3" maxcount="3"> <!-- 0x00011ef8 (mpeg2.c:12655) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="mpeg2_fullsearch"> <!-- 0x00010794 (mpeg2.c:12714) -->
+		<loop label="mpeg2_fullsearch" offset="0x290" mincount="2" maxcount="3"> <!-- 0x00010a24 (mpeg2.c:12791) -->
+			<loop label="mpeg2_fullsearch" offset="0x2b0" mincount="2" maxcount="3"> <!-- 0x00010a44 (mpeg2.c:12792) -->
+			</loop>
+		</loop>
+		<loop label="mpeg2_fullsearch" offset="0xfc" mincount="3" maxcount="7"> <!-- 0x00010890 (mpeg2.c:12741) -->
+			<loop label="mpeg2_fullsearch" offset="0x134" mincount="8" maxcount="56"> <!-- 0x000108c8 (mpeg2.c:12752) -->
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="mpeg2_dpframe_estimate"> <!-- 0x00011814 (mpeg2.c:12447) -->
+		<loop label="mpeg2_dpframe_estimate" offset="0x74" mincount="2" maxcount="2"> <!-- 0x00011888 (mpeg2.c:12533) -->
+			<loop label="mpeg2_dpframe_estimate" offset="0xa8" mincount="2" maxcount="2"> <!-- 0x000118bc (mpeg2.c:12472) -->
+				<loop label="mpeg2_dpframe_estimate" offset="0x3d4" mincount="3" maxcount="3"> <!-- 0x00011be8 (mpeg2.c:12539) -->
+					<loop label="mpeg2_dpframe_estimate" offset="0x410" mincount="3" maxcount="3"> <!-- 0x00011c24 (mpeg2.c:12533) -->
+					</loop>
+				</loop>
+			</loop>
+		</loop>
+	</function>
+
+	<function  label="mpeg2_dist1"> <!-- 0x0001044c (mpeg2.c:12822) -->
+		<loop label="mpeg2_dist1" offset="0x2e4" mincount="8" maxcount="16"> <!-- 0x00010730 (mpeg2.c:12944) -->
+			<loop label="mpeg2_dist1" offset="0x2f0" mincount="16" maxcount="16"> <!-- 0x0001073c (mpeg2.c:12950) -->
+			</loop>
+		</loop>
+		<loop label="mpeg2_dist1" offset="0x284" mincount="8" maxcount="16"> <!-- 0x000106d0 (mpeg2.c:12927) -->
+			<loop label="mpeg2_dist1" offset="0x290" mincount="16" maxcount="16"> <!-- 0x000106dc (mpeg2.c:12931) -->
+			</loop>
+		</loop>
+		<loop label="mpeg2_dist1" offset="0x1f8" mincount="8" maxcount="16"> <!-- 0x00010644 (mpeg2.c:12909) -->
+			<loop label="mpeg2_dist1" offset="0x204" mincount="16" maxcount="16"> <!-- 0x00010650 (mpeg2.c:12913) -->
+			</loop>
+		</loop>
+		<loop label="mpeg2_dist1" offset="0x28" mincount="1" maxcount="16"> <!-- 0x00010474 (mpeg2.c:12835) -->
+		</loop>
+	</function>
+
+</flowfacts>
