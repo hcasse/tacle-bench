@@ -1,0 +1,9 @@
+checksum "fbw.elf" 0xe28a27ca;
+
+// Function to_autopilot_from_last_radio (main.c:81)
+loop "to_autopilot_from_last_radio" + 0x28 min 9 max 9 ; // 0x10380 (main.c:85)
+
+// Function servo_transmit (servo.c:175)
+loop "servo_transmit" + 0x24 min 10 max 10 ; // 0x10e3c (servo.c:181)
+
+
