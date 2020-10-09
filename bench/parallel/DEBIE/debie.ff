@@ -1,0 +1,82 @@
+checksum "debie.elf" 0x23632c19;
+
+// Low-level flow facts
+multibranch "MeasureVoltage" + 0x80 to 0x11004,0x11008,0x1100c,0x11010,0x11014,0x11018,0x1101c,0x11020;	// 0x00011000 (code/health.c:1441) switch-like branch in "MeasureVoltage"
+
+
+// Function InitTC_LookUp (code/tc_hand.c:133)
+loop "InitTC_LookUp" + 0x1c min 128 max 128 ; // 0x12d88 (code/tc_hand.c:139)
+
+// Function Read_AD_Channel (code/health.c:2030)
+loop "Read_AD_Channel" + 0x3c min 1 max 8 ; // 0x10db4 (code/health.c:2052)
+
+// Function DelayAwhile (code/health.c:1980)
+loop "DelayAwhile" + 0x10 min 1 max 3 ; // 0x10d48 (code/health.c:1983)
+
+// Function Convert_AD (code/health.c:1717)
+loop "Convert_AD" + 0x30 min 0 max 5 ; // 0x10b0c (code/health.c:1734)
+
+
+// Low-level flow facts
+multibranch "Monitor" + 0x38 to 0x11918, 0x1191c, 0x11920, 0x11924, 0x11928, 0x1192c, 0x11930, 0x11934, 0x11938, 0x1193c, 0x11940;	// 0x00011914 (code/health.c:967) switch-like branch in "Monitor"
+
+
+// Function CalculateChecksum (code/health.c:1594)
+loop "CalculateChecksum" + 0x44 min 495 max 547 ; // 0x10a18 (code/health.c:1645)
+
+
+// Low-level flow facts
+multibranch "Switch_SU_Off" + 0x14 to 0x149f0,0x149f4,0x149f8,0x149fc,0x14a00;	// 0x000149ec (code/hw_if.c:711) switch-like branch in "Switch_SU_Off"
+
+multibranch "SetTriggerLevel" + 0x14 to 0x14be4,0x14be8,0x14bec,0x14bf0,0x14bf4;	// 0x00014be0 (code/hw_if.c:900) switch-like branch in "SetTriggerLevel"
+
+multibranch "Monitor_SU_Voltage" + 0x14 to 0x1123c,0x11240,0x11244,0x11248,0x1124c;	// 0x00011238 (code/health.c:2226) switch-like branch in "Monitor_SU_Voltage"
+
+
+// Function Monitor (code/health.c:958)
+loop "Monitor" + 0xffffea70 min 4 max 4 ; // 0x1034c (code/health.c:1356)
+
+// Function SelfTest_SU (code/health.c:2316)
+loop "SelfTest_SU" + 0x20 min 7 max 7 ; // 0x113c4 (code/health.c:2330)
+
+// Function LowVoltageCurrent.part.1 (code/health.c:1320)
+loop "LowVoltageCurrent.part.1" + 0x28 min 4 max 4 ; // 0x1034c (code/health.c:1356)
+
+
+// Function HandleHitTrigger (code/measure.c:102)
+loop "HandleHitTrigger" + 0x90 min 0 max 25 ; // 0x127dc (code/measure.c:173)
+loop "HandleHitTrigger" + 0x124 min 5 max 5 ; // 0x12870 (code/measure.c:239)
+	loop "HandleHitTrigger" + 0x15c min 0 max 25 ; // 0x128a8 (code/measure.c:254)
+
+
+// Low-level flow facts
+multibranch "ClassifyEvent" + 0x1c to 0x12468,0x1246c,0x12470,0x12474,0x12478;	// 0x00012464 (code/class.c:171) switch-like branch in "ClassifyEvent"
+
+
+// Function HandleAcquisition (code/measure.c:373)
+loop "HandleAcquisition" + 0x1d4 min 27 max 27 ; // 0x12b3c (code/measure.c:485)
+
+// Function wcc_memcpy (code/arch/arm7/wcc_memcpy.c:7)
+loop "wcc_memcpy" + 0x14 min 1 max 4 ; // 0x14db4 (code/arch/arm7/wcc_memcpy.c:8)
+
+// Function ClassifyEvent (code/class.c:161)
+loop "ClassifyEvent" + 0xffffff7c min 16 max 16 ; // 0x123c4 (code/class.c:50)
+loop "ClassifyEvent" + 0xffffff34 min 16 max 16 ; // 0x1237c (code/class.c:50)
+loop "ClassifyEvent" + 0xfffffeec min 16 max 16 ; // 0x12334 (code/class.c:50)
+loop "ClassifyEvent" + 0xfffffea4 min 16 max 16 ; // 0x122ec (code/class.c:50)
+loop "ClassifyEvent" + 0xfffffe5c min 16 max 16 ; // 0x122a4 (code/class.c:50)
+
+// Function FindMinQualityRecord (code/telem.c:221)
+loop "FindMinQualityRecord" + 0x58 min 1260 max 1260 ; // 0x11dd0 (code/telem.c:195)
+
+
+// Low-level flow facts
+multibranch "HandleTelecommand" + 0x74 to 0x142fc,0x14300,0x14304,0x14308,0x1430c,0x14310;	// 0x000142f8 (code/tc_hand.c:1515) switch-like branch in "HandleTelecommand"
+
+
+// Function ClearEvents (code/telem.c:451)
+loop "ClearEvents" + 0x38 min 4 max 4 ; // 0x1207c (code/telem.c:451)
+	loop "ClearEvents" + 0x48 min 10 max 10 ; // 0x1208c (code/telem.c:472)
+loop "ClearEvents" + 0xa0 min 0 max 10 ; // 0x120e4 (code/telem.c:483)
+
+
