@@ -1,0 +1,17 @@
+checksum "rijndael_dec.elf" 0xcf7a04b5;
+
+// Function rijndael_dec_set_key (aes.c:71)
+loop "rijndael_dec_set_key" + 0x484 min 0 max 0 ; // 0x10c0c (aes.c:105)
+loop "rijndael_dec_set_key" + 0x11c min 0 max 0 ; // 0x108a4 (aes.c:146)
+loop "rijndael_dec_set_key" + 0x36c min 7 max 7 ; // 0x10af4 (aes.c:122)
+loop "rijndael_dec_set_key" + 0x294 min 0 max 0 ; // 0x10a1c (aes.c:92)
+
+// Function rijndael_dec_decfile (rijndael_dec.c:122)
+loop "rijndael_dec_decfile" + 0x98 min 16 max 16 ; // 0x1056c (rijndael_dec.c:144)
+loop "rijndael_dec_decfile" + 0xb8 min 19491 max 91491 ; // 0x1058c (rijndael_dec.c:152)
+	loop "rijndael_dec_decfile" + 0x100 min 16 max 16 ; // 0x105d4 (rijndael_dec.c:166)
+
+// Function rijndael_dec_fread (rijndael_dec_libc.c:15)
+loop "rijndael_dec_fread" + 0x2c min 10 max 16 ; // 0x106a0 (rijndael_dec_libc.c:19)
+
+
