@@ -4,6 +4,6 @@
 		{ "name": "lift", "path": "lift.elf" }
 	],
 	"tasks": [
-		{ "name": "main" }
+		{ "name": "main", "exec":"lift" }
 	]
 }

@@ -4,6 +4,6 @@
 		{ "name": "powerwindow", "path": "powerwindow.elf" }
 	],
 	"tasks": [
-		{ "name": "powerwindow_main" }
+		{ "name": "powerwindow_main", "exec": "powerwindow" }
 	]
 }
