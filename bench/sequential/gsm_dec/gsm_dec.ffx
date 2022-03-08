@@ -6,6 +6,11 @@
 
 	<!-- Low-level flow facts-->	<!-- switch-like branch (00010998) in "gsm_dec_RPE_grid_positioning" -->
 	<multibranch label="gsm_dec_RPE_grid_positioning" offset="0x8">
+        <target address="0x0001099c"/>
+        <target address="0x000109a0"/>
+        <target address="0x000109a4"/>
+        <target address="0x000109a8"/>
+        <target address="0x000109ac"/>
 	</multibranch>
 
 	<function  label="gsm_dec_main"> <!-- 0x000115b4 (gsm_dec.c:734) -->
