@@ -15,4 +15,5 @@ loop "bitcount_main" + 0x58 min 8 max 8 ; // 0x104dc (bitcount.c:82)
 // Function bitcount_bit_count (bitcnt_1.c:29)
 loop "bitcount_bit_count" + 0xc min 3 max 8 ; // 0x10950 (bitcnt_1.c:33)
 
-
+// Low-level flow facts
+multibranch "bitcount_main" + 0xc4 to 0x00010550, 0x00010554, 0x00010558, 0x0001055c, 0x00010560, 0x00010564, 0x00010568;	// 0x00010548 (bitcount.c:101) switch-like branch in "bitcount_main"
