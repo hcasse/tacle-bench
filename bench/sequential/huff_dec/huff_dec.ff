@@ -1,0 +1,22 @@
+checksum "huff_dec.elf" 0xec7cc2b6;
+
+// Function huff_dec_main (huff_dec.c:165)
+loop "huff_dec_main" + 0xffffffa4 min 602 max 602 ; // 0x10804 (huff_dec.c:363)
+	loop "huff_dec_main" + 0xffffffbc min 3 max 9 ; // 0x1081c (huff_dec.c:365)
+
+// Function huff_dec_read_header (huff_dec.c:238)
+loop "huff_dec_read_header" + 0x1c min 257 max 257 ; // 0x105d4 (huff_dec.c:238)
+	loop "huff_dec_read_header" + 0x28 min 32 max 32 ; // 0x105e0 (huff_dec.c:247)
+loop "huff_dec_read_header" + 0x8c min 257 max 257 ; // 0x10644 (huff_dec.c:272)
+	loop "huff_dec_read_header" + 0xe0 min 0 max 1 ; // 0x10698 (huff_dec.c:293)
+loop "huff_dec_read_header" + 0x124 min 1 max 32 ; // 0x106dc (huff_dec.c:262)
+loop "huff_dec_read_header" + 0x54 min 256 max 256 ; // 0x1060c (huff_dec.c:257)
+
+// Function huff_dec_tree_encoding (huff_dec.c:316)
+loop "huff_dec_tree_encoding" + 0x28 min 257 max 257 ; // 0x10720 (huff_dec.c:321)
+	loop "huff_dec_tree_encoding" + 0x58 min 0 max 9 ; // 0x10750 (huff_dec.c:322)
+
+// Function huff_dec_read_code_n_bits (huff_dec.c:207)
+loop "huff_dec_read_code_n_bits" + 0x6c min 0 max 2 ; // 0x104ec (huff_dec.c:215)
+
+
