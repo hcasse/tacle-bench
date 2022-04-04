@@ -1,1 +1,18 @@
-nocall "gsignal";
+checksum "thread1.elf" 0x4d672a0d;
+
+// Low-level flow facts
+multicall "ros_th1_thread1" + 0x8c to ?;	// 0x0000ca18 (ros_th1.c:115) indirect call in "ros_th1_thread1"
+
+multicall "ros_th1_thread1" + 0x2e to ?;	// 0x0000c9ba (ros_th1.c:131) indirect call in "ros_th1_thread1"
+
+multicall "ros_th1_thread1" + 0xe6 to ?;	// 0x0000ca72 (ros_th1.c:134) indirect call in "ros_th1_thread1"
+
+multicall "ros_th1_thread1" + 0xbc to ?;	// 0x0000ca48 (ros_th1.c:126) indirect call in "ros_th1_thread1"
+
+multicall "ros_th1_thread1" + 0xa0 to ?;	// 0x0000ca2c (ros_th1.c:120) indirect call in "ros_th1_thread1"
+
+
+// Function ros_th1_thread1 (ros_th1.c:109)
+loop "ros_th1_thread1" + 0x7a ? ; // 0xca06 (ros_th1.c:115)
+
+

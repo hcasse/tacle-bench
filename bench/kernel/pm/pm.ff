@@ -1,42 +1,17 @@
-checksum "pm.elf" 0xc83fcb6f;
+checksum "pm.elf" 0x9662519e;
 
 // Function pm_init_lib (pm.c:129)
-loop "pm_init_lib" + 0x58 min 60 max 60 ; // 0x10360 (pm.c:141)
-loop "pm_init_lib" + 0x68 min 60 max 60 ; // 0x10370 (pm.c:145)
+loop "pm_init_lib" + 0x24 ? ; // 0x8154 (pm.c:141)
+loop "pm_init_lib" + 0x32 ? ; // 0x8162 (pm.c:145)
 
 // Function pm_init_pattern (pm.c:153)
-loop "pm_init_pattern" + 0x58 min 60 max 60 ; // 0x10408 (pm.c:165)
-loop "pm_init_pattern" + 0x68 min 60 max 60 ; // 0x10418 (pm.c:169)
+loop "pm_init_pattern" + 0x24 ? ; // 0x81b4 (pm.c:165)
+loop "pm_init_pattern" + 0x32 ? ; // 0x81c2 (pm.c:169)
 
 // Function pm_kernel (pm.c:264)
-//loop "pm_kernel" + 0x288 ? ; // 0x107f0 (pm.c:448)
-//	loop "pm_kernel" + 0x2d4 ? ; // 0x1083c (pm.c:482)
-// 	loop "pm_kernel" + 0x33c ? ; // 0x108a4 (pm.c:492)
-// 	loop "pm_kernel" + 0x608 ? ; // 0x10b70 (pm.c:709)
-// 	loop "pm_kernel" + 0x2a4 ? ; // 0x1080c (pm.c:449)
-// 	loop "pm_kernel" + 0x778 ? ; // 0x10ce0 (pm.c:658)
-// 	loop "pm_kernel" + 0x7a8 ? ; // 0x10d10 (pm.c:668)
-// 	loop "pm_kernel" + 0x4f8 ? ; // 0x10a60 (pm.c:682)
-// 	loop "pm_kernel" + 0x52c ? ; // 0x10a94 (pm.c:693)
-// 	loop "pm_kernel" + 0x678 ? ; // 0x10be0 (pm.c:595)
-// 		loop "pm_kernel" + 0x6a0 ? ; // 0x10c08 (pm.c:616)
-// 		loop "pm_kernel" + 0x700 ? ; // 0x10c68 (pm.c:605)
-// 	loop "pm_kernel" + 0x49c ? ; // 0x10a04 (pm.c:632)
-// 	loop "pm_kernel" + 0x3d8 ? ; // 0x10940 (pm.c:538)
-// 		loop "pm_kernel" + 0x5cc ? ; // 0x10b34 (pm.c:570)
-// 		loop "pm_kernel" + 0x440 ? ; // 0x109a8 (pm.c:581)
-// 		loop "pm_kernel" + 0x404 ? ; // 0x1096c (pm.c:556)
-// loop "pm_kernel" + 0x598 ? ; // 0x10b00 (pm.c:724)
-// loop "pm_kernel" + 0x1c8 ? ; // 0x10730 (pm.c:410)
-// 	loop "pm_kernel" + 0x1ec ? ; // 0x10754 (pm.c:423)
-// loop "pm_kernel" + 0x18c ? ; // 0x106f4 (pm.c:400)
-// loop "pm_kernel" + 0x104 ? ; // 0x1066c (pm.c:355)
-// loop "pm_kernel" + 0x124 ? ; // 0x1068c (pm.c:362)
+loop "pm_kernel" + 0x176 ? ; // 0x8422 (pm.c:410)
 
-// // Function pm_memcpy (pm_stdlib.c:38)
-// loop "pm_memcpy" + 0x14 ? ; // 0x11290 (pm_stdlib.c:39)
-
-// // Function pm_memset (pm_stdlib.c:48)
-// loop "pm_memset" + 0x14 ? ; // 0x112b8 (pm_stdlib.c:49)
+// Function pm_memcpy (pm_stdlib.c:38)
+loop "pm_memcpy" + 0xa ? ; // 0x8da6 (pm_stdlib.c:39)
 
 

@@ -1,0 +1,37 @@
+checksum "huff_enc.elf" 0x9a7744c9;
+
+// Function huff_enc_main (huff_enc.c:179)
+loop "huff_enc_main" + 0xffffff7e min 600 max 600 ; // 0x8852 (huff_enc.c:574)
+
+// Function huff_enc_build_tree_encoding (huff_enc.c:417)
+loop "huff_enc_build_tree_encoding" + 0x16 min 257 max 257 ; // 0x85d6 (huff_enc.c:426)
+loop "huff_enc_build_tree_encoding" + 0x50 min 600 max 600 ; // 0x8610 (huff_enc.c:437)
+loop "huff_enc_build_tree_encoding" + 0x8c min 218 max 218 ; // 0x864c (huff_enc.c:446)
+loop "huff_enc_build_tree_encoding" + 0xae min 38 max 38 ; // 0x866e (huff_enc.c:459)
+
+// Function huff_enc_create_codes_table (huff_enc.c:529)
+loop "huff_enc_create_codes_table" + 0xe min 32 max 32 ; // 0x87de (huff_enc.c:535)
+loop "huff_enc_create_codes_table" + 0x24 min 257 max 257 ; // 0x87f4 (huff_enc.c:540)
+	loop "huff_enc_create_codes_table" + 0x28 min 32 max 32 ; // 0x87f8 (huff_enc.c:541)
+
+// Function huff_enc_write_header (huff_enc.c:245)
+loop "huff_enc_write_header" + 0x20 min 256 max 256 ; // 0x82d0 (huff_enc.c:258)
+loop "huff_enc_write_header" + 0x17a min 256 max 256 ; // 0x842a (huff_enc.c:281)
+loop "huff_enc_write_header" + 0x108 min 257 max 257 ; // 0x83b8 (huff_enc.c:289)
+
+// Function huff_enc_write_bin_val (huff_enc.c:200)
+loop "huff_enc_write_bin_val" + 0x44 min 1 max 9 ; // 0x8230 (huff_enc.c:211)
+
+// Function huff_enc_qsort (huff_enc.c:368)
+loop "huff_enc_qsort" + 0x10 min 0 max 7 ; // 0x84ec (huff_enc.c:369)
+	loop "huff_enc_qsort" + 0x26 min 8 max 8 ; // 0x8502 (huff_enc.c:328)
+	loop "huff_enc_qsort" + 0x88 min 8 max 8 ; // 0x8564 (huff_enc.c:328)
+	loop "huff_enc_qsort" + 0x40 min 0 max 109 ; // 0x851c (huff_enc.c:387)
+		loop "huff_enc_qsort" + 0x52 min 1 max 25 ; // 0x852e (huff_enc.c:390)
+		loop "huff_enc_qsort" + 0x6e min 1 max 25 ; // 0x854a (huff_enc.c:328)
+
+// Function huff_enc_encode_codes_table (huff_enc.c:487)
+loop "huff_enc_encode_codes_table" + 0xc4 min 31 max 32 ; // 0x8794 (huff_enc.c:511)
+loop "huff_enc_encode_codes_table" + 0x5c min 31 max 31 ; // 0x872c (huff_enc.c:498)
+
+
