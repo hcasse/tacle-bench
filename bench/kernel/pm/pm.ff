@@ -1,17 +1,17 @@
 checksum "pm.elf" 0x9662519e;
 
 // Function pm_init_lib (pm.c:129)
-loop "pm_init_lib" + 0x24 ? ; // 0x8154 (pm.c:141)
-loop "pm_init_lib" + 0x32 ? ; // 0x8162 (pm.c:145)
+loop "pm_init_lib" + 0x24 min 60 max 60 ; // 0x8154 (pm.c:141)
+loop "pm_init_lib" + 0x32 min 60 max 60 ; // 0x8162 (pm.c:145)
 
 // Function pm_init_pattern (pm.c:153)
-loop "pm_init_pattern" + 0x24 ? ; // 0x81b4 (pm.c:165)
-loop "pm_init_pattern" + 0x32 ? ; // 0x81c2 (pm.c:169)
+loop "pm_init_pattern" + 0x24 min 60 max 60 ; // 0x81b4 (pm.c:165)
+loop "pm_init_pattern" + 0x32 min 60 max 60 ; // 0x81c2 (pm.c:169)
 
 // Function pm_kernel (pm.c:264)
-loop "pm_kernel" + 0x176 ? ; // 0x8422 (pm.c:410)
+loop "pm_kernel" + 0x176 min 21 max 21 ; // 0x8422 (pm.c:410)
 
 // Function pm_memcpy (pm_stdlib.c:38)
-loop "pm_memcpy" + 0xa ? ; // 0x8da6 (pm_stdlib.c:39)
+loop "pm_memcpy" + 0xa min 44 max 256 ; // 0x8da6 (pm_stdlib.c:39)
 
 
