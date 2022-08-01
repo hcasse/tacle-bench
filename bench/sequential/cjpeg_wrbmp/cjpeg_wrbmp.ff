@@ -1,0 +1,17 @@
+checksum "cjpeg_wrbmp.elf" 0x873c7d17;
+
+// Function cjpeg_wrbmp_main (cjpeg_wrbmp.c:115)
+loop "cjpeg_wrbmp_main" + 0xfffffed0 min 256 max 256 ; // 0x8228 (cjpeg_wrbmp.c:103)
+loop "cjpeg_wrbmp_main" + 0xffffff8c min 256 max 256 ; // 0x82e4 (cjpeg_wrbmp.c:103)
+loop "cjpeg_wrbmp_main" + 0xffffff1e min 256 max 256 ; // 0x8276 (cjpeg_wrbmp.c:103)
+loop "cjpeg_wrbmp_main" + 0xfffffe7a min 512 max 512 ; // 0x81d2 (cjpeg_wrbmp.c:103)
+loop "cjpeg_wrbmp_main" + 0x38 min 30 max 30 ; // 0x8390 (cjpeg_wrbmp.c:121)
+loop "cjpeg_wrbmp_main" + 0xc min 30 max 30 ; // 0x8364 (cjpeg_wrbmp.c:121)
+
+// Function cjpeg_wrbmp_write_colormap (cjpeg_wrbmp.c:134)
+loop "cjpeg_wrbmp_write_colormap" + 0x64 min 256 max 256 ; // 0x8228 (cjpeg_wrbmp.c:103)
+loop "cjpeg_wrbmp_write_colormap" + 0x120 min 256 max 256 ; // 0x82e4 (cjpeg_wrbmp.c:103)
+loop "cjpeg_wrbmp_write_colormap" + 0xb2 min 256 max 256 ; // 0x8276 (cjpeg_wrbmp.c:103)
+loop "cjpeg_wrbmp_write_colormap" + 0xe min 256 max 256 ; // 0x81d2 (cjpeg_wrbmp.c:103)
+
+

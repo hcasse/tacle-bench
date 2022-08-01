@@ -1,0 +1,12 @@
+checksum "h264_dec.elf" 0xe080d9c8;
+
+// Function h264_dec_main (h264_dec.c:593)
+loop "h264_dec_main" + 0xfffffc7e min 1 max 1 ; // 0x81fa (h264_dec.c:156)
+	loop "h264_dec_main" + 0xfffffc94 min 4 max 4 ; // 0x8210 (h264_dec.c:156)
+		loop "h264_dec_main" + 0xfffffc98 min 4 max 4 ; // 0x8214 (h264_dec.c:172)
+			loop "h264_dec_main" + 0xfffffd04 min 4 max 4 ; // 0x8280 (h264_dec.c:172)
+				loop "h264_dec_main" + 0xfffffd2a min 4 max 4 ; // 0x82a6 (h264_dec.c:175)
+			loop "h264_dec_main" + 0xfffffe9e min 4 max 4 ; // 0x841a (h264_dec.c:552)
+				loop "h264_dec_main" + 0xfffffeb6 min 4 max 4 ; // 0x8432 (h264_dec.c:551)
+
+
