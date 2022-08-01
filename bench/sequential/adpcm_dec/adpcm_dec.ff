@@ -1,0 +1,13 @@
+checksum "adpcm_dec.elf" 0x782478a7;
+
+// Function adpcm_dec_decode (adpcm_dec.c:267)
+loop "adpcm_dec_decode" + 0x5c min 5 max 5 ; // 0x10564 (adpcm_dec.c:438)
+loop "adpcm_dec_decode" + 0x2e4 min 5 max 5 ; // 0x107ec (adpcm_dec.c:438)
+loop "adpcm_dec_decode" + 0x54c min 10 max 10 ; // 0x10a54 (adpcm_dec.c:396)
+loop "adpcm_dec_decode" + 0x5c4 min 10 max 10 ; // 0x10acc (adpcm_dec.c:415)
+
+// Function adpcm_dec_upzero (adpcm_dec.c:501)
+loop "adpcm_dec_upzero" + 0x58 min 6 max 6 ; // 0x104d8 (adpcm_dec.c:510)
+loop "adpcm_dec_upzero" + 0x14 min 6 max 6 ; // 0x10494 (adpcm_dec.c:504)
+
+
