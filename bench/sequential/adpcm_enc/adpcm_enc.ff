@@ -1,0 +1,14 @@
+checksum "adpcm_enc.elf" 0x2f6fae79;
+
+// Function adpcm_enc_encode (adpcm_enc.c:269)
+loop "adpcm_enc_encode" + 0x44 min 10 max 10 ; // 0x105cc (adpcm_enc.c:286)
+loop "adpcm_enc_encode" + 0xa0 min 22 max 22 ; // 0x10628 (adpcm_enc.c:299)
+loop "adpcm_enc_encode" + 0x108 min 5 max 5 ; // 0x10690 (adpcm_enc.c:436)
+loop "adpcm_enc_encode" + 0x1e0 min 1 max 30 ; // 0x10768 (adpcm_enc.c:473)
+loop "adpcm_enc_encode" + 0x39c min 5 max 5 ; // 0x10924 (adpcm_enc.c:436)
+
+// Function adpcm_enc_upzero (adpcm_enc.c:539)
+loop "adpcm_enc_upzero" + 0x58 min 6 max 6 ; // 0x10558 (adpcm_enc.c:548)
+loop "adpcm_enc_upzero" + 0x14 min 6 max 6 ; // 0x10514 (adpcm_enc.c:542)
+
+
