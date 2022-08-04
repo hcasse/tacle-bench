@@ -1,0 +1,26 @@
+checksum "ndes.elf" 0x36b0b431;
+
+// Function ndes_des (ndes.c:96)
+loop "ndes_des" + 0x200 min 28 max 28 ; // 0x871c (ndes.c:140)
+loop "ndes_des" + 0x248 min 16 max 16 ; // 0x8764 (ndes.c:147)
+loop "ndes_des" + 0x7a min 32 max 32 ; // 0x8596 (ndes.c:158)
+loop "ndes_des" + 0xdc min 16 max 16 ; // 0x85f8 (ndes.c:164)
+loop "ndes_des" + 0x160 min 32 max 32 ; // 0x867c (ndes.c:179)
+loop "ndes_des" + 0x44 min 31 max 31 ; // 0x8560 (ndes.c:131)
+
+// Function memcpy (../../../../../../../../../newlib/libc/machine/arm/memcpy-armv7m.S:96)
+loop "memcpy" + 0x118 min 1 max 1 ; // 0x89b8 (../../../../../../../../../newlib/libc/machine/arm/memcpy-armv7m.S:310)
+loop "memcpy" + 0xc0 min 1 max 1 ; // 0x8960 (../../../../../../../../../newlib/libc/machine/arm/memcpy-armv7m.S:155)
+loop "memcpy" + 0x98 min 1 max 1 ; // 0x8938 (../../../../../../../../../newlib/libc/machine/arm/memcpy-armv7m.S:137)
+loop "memcpy" + 0x10 min 1 max 1 ; // 0x88b0 (../../../../../../../../../newlib/libc/machine/arm/memcpy-armv7m.S:115)
+
+// Function ndes_ks (ndes.c:326)
+loop "ndes_ks" + 0x9e min 16 max 16 ; // 0x8486 (ndes.c:341)
+
+// Function ndes_cyfun (ndes.c:187)
+loop "ndes_cyfun" + 0x182 min 32 max 32 ; // 0x836a (ndes.c:309)
+loop "ndes_cyfun" + 0x110 min 8 max 8 ; // 0x82f8 (ndes.c:297)
+loop "ndes_cyfun" + 0xda min 4 max 4 ; // 0x82c2 (ndes.c:287)
+loop "ndes_cyfun" + 0x5a min 16 max 16 ; // 0x8242 (ndes.c:275)
+
+
