@@ -17,3 +17,25 @@ loop "bitcount_bit_count" + 0xc min 3 max 8 ; // 0x10950 (bitcnt_1.c:33)
 
 // Low-level flow facts
 multibranch "bitcount_main" + 0xc4 to 0x00010550, 0x00010554, 0x00010558, 0x0001055c, 0x00010560, 0x00010564, 0x00010568;	// 0x00010548 (bitcount.c:101) switch-like branch in "bitcount_main"
+
+// Function bitcount_main (bitcount.c:93)
+loop "bitcount_main" + 0x58 min 8 max 8 ; // 0x104dc (bitcount.c:82)
+loop "bitcount_main" + 0xc0 min 10 max 10 ; // 0x10544 (bitcount.c:101)
+		loop "bitcount_main" + 0x18c min 31 max 31 ; // 0x10610 (bitcount.c:53)
+
+multibranch "bitcount_main" + 0xc4 to 	// 0x00010548 (bitcount.c:101)
+	"bitcount_main" + 0xe4,	// 0x00010568 (bitcount.c:101) switch-like branch in "bitcount_main"
+	"bitcount_main" + 0xe0,	// 0x00010564 (bitcount.c:101) switch-like branch in "bitcount_main"
+	"bitcount_main" + 0xdc,	// 0x00010560 (bitcount.c:101) switch-like branch in "bitcount_main"
+	"bitcount_main" + 0xd8,	// 0x0001055c (bitcount.c:101) switch-like branch in "bitcount_main"
+	"bitcount_main" + 0xd4,	// 0x00010558 (bitcount.c:101) switch-like branch in "bitcount_main"
+	"bitcount_main" + 0xd0,	// 0x00010554 (bitcount.c:101) switch-like branch in "bitcount_main"
+	"bitcount_main" + 0xcc;	// 0x00010550 (bitcount.c:101) switch-like branch in "bitcount_main"
+
+// Function bitcount_ntbl_bitcnt (bitcnt_4.c:60)
+loop "bitcount_ntbl_bitcnt" + 0x20 min 0 max 20 ; // 0x108e4 (bitcnt_4.c:60)
+
+// Function bitcount_btbl_bitcnt (bitcnt_4.c:74)
+loop "bitcount_btbl_bitcnt" + 0x20 min 0 max 20 ; // 0x10924 (bitcnt_4.c:74)
+
+

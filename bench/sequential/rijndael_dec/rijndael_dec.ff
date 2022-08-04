@@ -15,3 +15,10 @@ loop "rijndael_dec_decfile" + 0xb8 min 19491 max 91491 ; // 0x1058c (rijndael_de
 loop "rijndael_dec_fread" + 0x2c min 10 max 16 ; // 0x106a0 (rijndael_dec_libc.c:19)
 
 
+checksum "rijndael_dec.elf" 0xcf7a04b5;
+
+// Function rijndael_dec_init (rijndael_dec.c:65)
+loop "rijndael_dec_init" + 0x4c min 32768 max 32768; // 0x10360 (rijndael_dec.c:76)
+loop "rijndael_dec_init" + 0x80 min 64 max 64 ; // 0x10394 (rijndael_dec.c:88)
+
+
