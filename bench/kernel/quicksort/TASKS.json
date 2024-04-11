@@ -1,0 +1,12 @@
+{
+	"name": "quicksort",
+	"execs": [
+		{
+			"name": "quicksort",
+			"path": "quicksort.elf"
+		}
+	],
+	"tasks": [
+		{"name": "quicksort_main"}
+	]
+}

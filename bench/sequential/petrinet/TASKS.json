@@ -1,0 +1,1 @@
+{"name": "petrinet", "execs": [{"name": "petrinet", "path": "petrinet.elf"}], "tasks": [{"name": "petrinet_main"}]}

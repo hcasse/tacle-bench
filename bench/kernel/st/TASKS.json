@@ -1,0 +1,1 @@
+{"name": "st", "execs": [{"name": "st", "path": "st.elf"}], "tasks": [{"name": "st_main"}]}

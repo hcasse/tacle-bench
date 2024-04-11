@@ -1,0 +1,1 @@
+{"name": "bitonic", "execs": [{"name": "bitonic", "path": "bitonic.elf"}], "tasks": [{"name": "bitonic_main"}]}

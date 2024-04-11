@@ -1,0 +1,1 @@
+{"name": "minver", "execs": [{"name": "minver", "path": "minver.elf"}], "tasks": [{"name": "minver_main"}]}

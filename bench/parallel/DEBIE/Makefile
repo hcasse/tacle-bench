@@ -1,7 +1,7 @@
 include ../../../Makefile.cfg
 
 CC = $(CONF_CC)
-CFLAGS = $(CONF_CFLAGS) -Icode -Icode/arch/arm7 -Icode/harness
+CFLAGS = $(CONF_CFLAGS) -Icode -Icode/arch/arm7 -Icode/harness -gdwarf-4
 LD_FLAGS = $(CONF_LDFLAGS)
 
 BENCH=debie

@@ -1,0 +1,1 @@
+{"name": "huff_enc", "execs": [{"name": "huff_enc", "path": "huff_enc.elf"}], "tasks": [{"name": "huff_enc_main"}]}

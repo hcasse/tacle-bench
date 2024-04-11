@@ -1,0 +1,1 @@
+{"name": "ludcmp", "execs": [{"name": "ludcmp", "path": "ludcmp.elf"}], "tasks": [{"name": "ludcmp_main"}]}

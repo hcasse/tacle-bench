@@ -1,0 +1,1 @@
+{"name": "insertsort", "execs": [{"name": "insertsort", "path": "insertsort.elf"}], "tasks": [{"name": "insertsort_main"}]}

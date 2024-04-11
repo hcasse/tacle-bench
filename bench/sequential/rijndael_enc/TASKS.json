@@ -1,0 +1,1 @@
+{"name": "rijndael_enc", "execs": [{"name": "rijndael_enc", "path": "rijndael_enc.elf"}], "tasks": [{"name": "rijndael_enc_main"}]}

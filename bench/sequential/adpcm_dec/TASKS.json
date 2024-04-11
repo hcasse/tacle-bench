@@ -1,0 +1,1 @@
+{"name": "adpcm_dec", "execs": [{"name": "adpcm_dec", "path": "adpcm_dec.elf"}], "tasks": [{"name": "adpcm_dec_main"}]}

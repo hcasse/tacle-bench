@@ -1,0 +1,1 @@
+{"name": "g723_enc", "execs": [{"name": "g723_enc", "path": "g723_enc.elf"}], "tasks": [{"name": "g723_enc_main"}]}

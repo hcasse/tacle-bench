@@ -1,0 +1,1 @@
+{"name": "prime", "execs": [{"name": "prime", "path": "prime.elf"}], "tasks": [{"name": "prime_main"}]}

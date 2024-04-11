@@ -1,0 +1,1 @@
+{"name": "lms", "execs": [{"name": "lms", "path": "lms.elf"}], "tasks": [{"name": "lms_main"}]}

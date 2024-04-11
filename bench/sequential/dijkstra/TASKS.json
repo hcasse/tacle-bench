@@ -1,0 +1,1 @@
+{"name": "dijkstra", "execs": [{"name": "dijkstra", "path": "dijkstra.elf"}], "tasks": [{"name": "dijkstra_main"}]}

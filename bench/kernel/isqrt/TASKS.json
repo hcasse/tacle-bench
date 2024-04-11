@@ -1,0 +1,1 @@
+{"name": "isqrt", "execs": [{"name": "isqrt", "path": "isqrt.elf"}], "tasks": [{"name": "isqrt_main"}]}

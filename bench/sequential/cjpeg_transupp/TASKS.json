@@ -1,0 +1,1 @@
+{"name": "cjpeg_transupp", "execs": [{"name": "cjpeg_transupp", "path": "cjpeg_transupp.elf"}], "tasks": [{"name": "cjpeg_transupp_main"}]}

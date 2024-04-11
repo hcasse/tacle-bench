@@ -1,0 +1,1 @@
+{"name": "sha", "execs": [{"name": "sha", "path": "sha.elf"}], "tasks": [{"name": "sha_main"}]}

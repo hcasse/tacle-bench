@@ -1,0 +1,1 @@
+{"name": "filterbank", "execs": [{"name": "filterbank", "path": "filterbank.elf"}], "tasks": [{"name": "filterbank_main"}]}

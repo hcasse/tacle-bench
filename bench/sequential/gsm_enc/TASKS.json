@@ -1,0 +1,1 @@
+{"name": "gsm_enc", "execs": [{"name": "gsm_enc", "path": "gsm_enc.elf"}], "tasks": [{"name": "gsm_enc_main"}]}

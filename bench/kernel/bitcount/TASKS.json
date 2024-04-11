@@ -1,0 +1,1 @@
+{"name": "bitcount", "execs": [{"name": "bitcount", "path": "bitcount.elf"}], "tasks": [{"name": "bitcount_main"}]}

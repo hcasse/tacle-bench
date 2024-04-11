@@ -1,0 +1,1 @@
+{"name": "audiobeam", "execs": [{"name": "audiobeam", "path": "audiobeam.elf"}], "tasks": [{"name": "audiobeam_main"}]}
